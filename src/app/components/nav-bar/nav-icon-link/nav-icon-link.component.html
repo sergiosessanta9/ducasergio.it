@@ -1,0 +1,21 @@
+<!--<a [href]="link?.href" [title]="link?.title" target="_blank">
+  <svg-icon [data]="link?.icon"/>
+</a>-->
+
+<a [href]="link?.href"
+   [ngClass]="
+  {
+    'flex items-center justify-center rounded-xl hover:bg-slate-300/50 dark:hover:bg-slate-800/50': true,
+    'text-slate-800 sm:bg-slate-300/50 sm:pr-3 sm:pl-1 sm:hover:bg-slate-300/70 dark:text-slate-100 sm:dark:bg-slate-800/50 sm:dark:hover:bg-slate-700/50': false
+  }"
+   [attr.aria-label]="'My ' + link?.title + ' profile'"
+   [attr.title]="'My ' + link?.title + ' profile'"
+   target="_blank"
+   rel="noreferrer nofollow">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl">
+         <svg-icon [data]="link?.icon"/>
+      </span>
+      <span *ngIf="label" class="hidden text-xs font-bold sm:block dark:font-semibold">
+        {{ label }}
+      </span>
+</a>

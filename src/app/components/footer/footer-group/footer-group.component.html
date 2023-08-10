@@ -1,0 +1,10 @@
+<div>
+  <div class="mb-2 px-2 text-[13px] text-slate-600 dark:text-slate-400">
+    <span>{{group?.title}}</span>
+  </div>
+  <ul class="flex flex-col">
+    <li *ngFor="let link of group?.links">
+      <footer-link [link]="link"/>
+    </li>
+  </ul>
+</div>

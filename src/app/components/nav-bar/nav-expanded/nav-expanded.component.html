@@ -1,0 +1,19 @@
+<div class="flex">
+  <div class="nav-link nav-link--label pointer-events-none ml-2 mr-2">
+    {{ title }}
+    <svg-icon [icon]="Icons.ChevronRightIcon" className="h-3 w-3"/>
+    <!--icon-->
+  </div>
+  <ul class="flex items-center">
+    <ng-container *ngFor="let item of items; let idx = index">
+      <li>
+        <nav-link [title]="item.title" [href]="item.href" class="nav-link cursor-pointer"></nav-link>
+      </li>
+      <ng-container *ngIf="idx !== items.length - 1">
+        <li>
+          <div class="nav-link__separator">&middot;</div>
+        </li>
+      </ng-container>
+    </ng-container>
+  </ul>
+</div>

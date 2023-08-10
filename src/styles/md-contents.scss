@@ -1,0 +1,145 @@
+/* markdown-style.css */
+@tailwind base;
+
+.mdx-contents {
+  @apply w-full text-slate-600;
+
+  & p {
+    @apply leading-relaxed;
+    @apply mt-4 md:mt-5;
+    @apply leading-relaxed;
+
+    & + p {
+      @apply mt-4 md:mt-5;
+    }
+  }
+
+  & strong {
+    @apply font-bold text-slate-700;
+    @apply dark:text-slate-300;
+  }
+
+  & hr {
+    @apply flex h-[1px] items-center justify-center bg-transparent;
+
+    & + * {
+      @apply text-slate-600;
+    }
+
+    & + h1 {
+      @apply text-[2.5rem] font-extrabold leading-tight text-slate-700 md:text-7xl md:leading-snug dark:text-slate-300;
+    }
+
+    & + h2 {
+      @apply mt-4 font-extrabold text-slate-700 md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px] dark:text-slate-400;
+    }
+
+    & + h3 {
+      @apply text-accent-600 mb-1 block text-lg font-extrabold capitalize leading-none md:mb-0 md:text-2xl dark:text-accent-400;
+    }
+
+    &::after {
+      @apply h-[1px] w-full rounded-full bg-slate-200 content-[''];
+      @apply dark:bg-slate-800;
+    }
+  }
+
+  header{
+     * {
+      @apply text-slate-600;
+    }
+
+    h1 {
+      @apply text-[2.5rem] font-extrabold leading-tight text-slate-700 md:text-7xl md:leading-snug dark:text-slate-300;
+    }
+
+    h2 {
+      @apply mt-4 text-lg text-slate-600 md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px] dark:text-slate-400;
+    }
+
+    h3 {
+      @apply text-accent-600 mb-1 block text-lg font-extrabold capitalize leading-none md:mb-0 md:text-2xl dark:text-accent-400;
+    }
+  }
+
+  & ul,
+  & ol {
+    @apply ml-7 mt-6 mb-6;
+    @apply md:ml-9;
+
+    & li {
+      @apply relative leading-relaxed;
+      @apply mt-2;
+
+      &::before {
+        @apply absolute -left-7 top-[7px] h-3 w-3 rounded-[4px] bg-slate-500 content-[''];
+        @apply md:-left-9;
+        @apply dark:bg-slate-400;
+      }
+    }
+  }
+
+  & a {
+    @apply text-accent-600 dark:text-accent-400;
+  }
+
+  :not(pre, .mdx-inline-highlight) {
+    > code {
+      @apply font-medium text-slate-700;
+      @apply dark:text-slate-300;
+
+      &::before,
+      &::after {
+        @apply content-['`'];
+        @apply border-l-2 border-slate-500 dark:border-slate-400; /* Add this line */
+      }
+
+      &::before {
+        @apply mr-[-2px];
+      }
+
+      &::after {
+        @apply ml-[-2px];
+      }
+    }
+  }
+
+  & blockquote {
+    @apply relative -my-6 pl-12 text-slate-600;
+    @apply dark:text-slate-400;
+    @apply mx-auto max-w-[75rem] px-4;
+    @apply sm:px-12 md:px-10 lg:px-[4.5rem] xl:px-32;
+
+    &::before {
+      @apply absolute top-0 bottom-0 hidden lg:block xl:block lg:left-[4rem] xl:left-[1.5rem] w-[1px] rounded-full bg-slate-200 content-[''];
+      @apply dark:bg-slate-800;
+    }
+
+    & hr {
+      @apply mt-8;
+    }
+  }
+
+  & table {
+    @apply mt-6 mb-8 w-full overflow-x-auto text-sm bg-white dark:bg-[#161e31] border-separate border-spacing-0 border rounded-xl;
+  }
+
+  & thead{
+    & th,
+    & td {
+      @apply border-b font-bold;
+    }
+
+  }
+
+  & th,
+  & td {
+    @apply p-3 text-left;
+  }
+
+  & th {
+    @apply font-semibold text-slate-700 dark:text-slate-300;
+  }
+
+
+}

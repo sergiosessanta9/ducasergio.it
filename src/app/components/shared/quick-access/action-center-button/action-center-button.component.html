@@ -1,0 +1,19 @@
+<button type="button" (click)="onClick.emit()" [ngClass]="
+    {
+      'relative flex flex-1 flex-col justify-between overflow-hidden rounded-xl p-4 transition-colors dark:bg-[#1d263a] bg-white/50': true,
+      'bg-white dark:bg-slate-700': active,
+      'bg-white/50': !active
+    }">
+
+  <div *ngIf="active; else notActive">
+    <svg-icon [icon]="icons?.at(0)"/>
+  </div>
+  <ng-template #notActive>
+    <svg-icon [icon]="icons?.at(1)"/>
+  </ng-template>
+
+  <div class="text-left text-[13px] font-medium dark:font-normal">
+    {{text}}
+  </div>
+
+</button>

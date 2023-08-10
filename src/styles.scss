@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "font-mono";
+  src: url("./assets/fonts/PlusJakartaSans-ExtraBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "font-sans";
+  src: url("./assets/fonts/PlusJakartaSans-Regular.ttf") format('truetype');
+}
+
+@import 'tailwindcss/base';
+@import 'styles/base.css';
+
+@import 'tailwindcss/components';
+@import 'styles/components.scss';
+@import 'styles/md-components.scss';
+@import 'styles/md-contents.scss';
+
+@import 'tailwindcss/utilities';
+

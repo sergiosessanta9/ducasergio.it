@@ -1,0 +1,24 @@
+<div class="flex flex-col gap-2" [@animation]="animateInStart">
+  <div class="px-2 text-xl font-bold">
+    Action Center
+  </div>
+
+  <div class="flex flex-1 flex-col gap-8 p-2">
+    <div class="flex h-24 gap-4">
+
+      <action-center-button
+        class="flex flex-1"
+        [active]="theme == 'dark'"
+        [text]="theme == 'dark' ? 'Dark Mode: On' : 'Dark Mode: Off'"
+        (onClick)="handleThemeChange()"
+        [icons]="[Icons.DarkIcon, Icons.LightIcon]"/>
+
+      <action-center-button
+        class="flex flex-1"
+        [text]="focusMode ? 'Focus: On' : 'Focus: Off'"
+        (onClick)="toggleFocusMode()"
+        [active]="focusMode"
+        [icons]="[Icons.EyeIcon, Icons.EyeSlash]"/>
+    </div>
+  </div>
+</div>
