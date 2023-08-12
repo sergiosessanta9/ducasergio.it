@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+  <div class="flex items-center justify-center py-8">
+    <blockquote class="flex gap-2 pt-2 text-3xl text-slate-500 md:text-4xl lg:pt-0 lg:text-5xl dark:text-slate-400">
+      <svg-icon *ngIf="showQuote" [icon]="Icons.QuoteIcon"
+                className="-mt-1 h-10 text-slate-300 md:-mt-3 md:h-16 lg:h-24 dark:text-slate-800"/>
+
+      <div class="flex flex-col" appAutoType [typingSpeed]="80" [delay]="2000" (animationStart)="showQuote = true"
+           (animationEnd)="showLine = true">
+
+        <span class="leading-[1.15]">
+          <em>Write</em>
+        </span>
+
+        <span class="flex items-center gap-2 leading-[1.15] lg:gap-4">
+          <span [ngStyle]="{opacity: showLine ? 1 : 0, animation: 'all 5s forwards ease-in'}" class="mt-1 h-0.5 w-8 rounded-full bg-slate-400 lg:h-1 lg:w-24 dark:bg-slate-600"></span>
+          <strong class="font-extrabold text-slate-600 dark:text-slate-300">code,</strong>
+          <span [ngStyle]="{opacity: showLine ? 1 : 0, animation: 'all 0.5 forwards ease-in'}" class="mt-1 h-0.5 w-8 rounded-full bg-slate-400 lg:h-1 lg:w-24 dark:bg-slate-600"></span>
+        </span>
+
+        <span class="leading-[1.15] flex">
+          <span class="mr-5">create</span>
+          <strong class="relative font-extrabold text-slate-600 dark:text-slate-300">
+            <div
+              class="-left-0.5 right-0 top-1 bottom-0 z-[-1] rounded-md bg-slate-100 px-1 lg:-left-1.5 lg:-right-0.5 lg:top-2 lg:bottom-0 dark:bg-slate-800">
+              <span>future.</span>
+            </div>
+          </strong>
+        </span>
+
+      </div>
+      <!--
+      <div class="flex flex-col">
+        <div *ngFor="let word of sentence; let i = index">
+          <div [ngClass]="{'leading-[1.15]': !word.lines}">
+            <div *ngIf="!word.lines; else betweenLines">
+              <span [ngClass]="{'typing-animation': word.caret}" [appAutoType]="word.text" [speed]="typeSpeed"
+                    [delay]="delays[i]" (onStart)="showQuote = true; word.caret = true;"
+                    (onComplete)="showLineIfNeeds(i); word.caret = i == sentence.length-1"></span>
+            </div>
+            <ng-template #betweenLines>
+              <div class="flex items-center gap-2 leading-[1.15] lg:gap-4">
+                <span *ngIf="word.lines[0]"
+                      class="mt-1 h-0.5 w-8 rounded-full bg-slate-400 lg:h-1 lg:w-24 dark:bg-slate-600"></span>
+                <span>
+              <strong class="font-extrabold text-slate-600 dark:text-slate-300">
+                <span [ngClass]="{'typing-animation': word.caret}" [appAutoType]="word.text" [speed]="typeSpeed"
+                      [delay]="delays[i]" (onStart)="showQuote = true; word.caret = true;"
+                      (onComplete)="showLineIfNeeds(i-1); word.caret = i == sentence.length -1"></span>
+              </strong>
+            </span>
+                <span *ngIf="word.lines[1]"
+                      class="mt-1 h-0.5 w-8 rounded-full bg-slate-400 lg:h-1 lg:w-24 dark:bg-slate-600"></span>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      -->
+    </blockquote>
+  </div>
+</div>

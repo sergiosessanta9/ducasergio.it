@@ -8,56 +8,51 @@
 
 ---
 
-## All about my freelance, self-employed, and professional work experience.
+## My Journey in Software Development and Learning
 
 ---
 
->I started my professional career as a web developer around 2016. In 2021, I resigned from my job to focus on completing college >matters while taking on some freelance projects.
+>---
+>## [Introduction](/work/experience#introduction)
+>
+>Hello there! I'm excited to share my journey in the world of software development with you. It's been quite an adventure since I
+>graduated from Amedeo Avogadro Institute in Turin back in 2019. Fast forward to today, I've spent the past three years thriving at
+>Exprivia, a fantastic company where I've honed my skills and embraced new challenges.
 >
 >---
+>## [Graduation and Beyond](/work/experience#graduation-and-beyond)
 >
->## Self-employed
->
->**1928.id** (Mar 2022 - present)
->
->1. Improving the UI & UX of Femicam's desktop application based on React Electron and Material UI.
->2. Designing and creating React components for the application dashboard.
->3. Creating an image editor using Sharp.js.
+>- 🎓 Graduated from Amedeo Avogadro Institute in 2019
+>- 🚀 Eagerly started my professional journey in software development
+>- 🌱 Continuously learning and growing since day one
 >
 >---
+>## [Embracing New Opportunities at Exprivia](/work/experience#embracing-new-opportunities-at-exprivia)
 >
->## Freelance
+>My path led me to Exprivia, a dynamic and innovative company that I've proudly called home for the past three years. Here's what I've achieved:
 >
->**Hemat.id** (Jun 2022 - Jul 2022)
->
->1. Created main site navigation (menu, footer, mobile drawer) using Tailwind CSS.
->2. Created product tiles, promotion cards, and other small components using Tailwind CSS.
->
->**Ciptaloka** (Jan 2022 - Mar 2022)
->
->1. Created main site navigation (mega-menu, mobile drawer) using Tailwind CSS.
->2. Revamped shopping cart & checkout pages (~18 pages in total).
+>- 🛠️ Collaborated with a talented team to develop cutting-edge solutions
+>- 🌐 Mastered WSO2, a significant step in expanding my technical expertise
+>- 🚀 Innovated and improved processes, contributing to team success
 >
 >---
+>## [From Office to Home: A Humorous Twist](/work/experience#from-office-to-home-a-humorous-twist)
 >
->## Professional Work
+>Ah, the remote work life! For nearly three years, I've been creating magic from the comfort of my home office. Here's a glimpse of my daily routine:
 >
->**Ciptaloka** (Jul 2016 - Jun 2021)
->
->My first and (currently) only professional work is at Ciptaloka. At Ciptaloka, I do many types of work, such as developing desktop, >mobile, and web applications.
->
->However, my work there is primarily focused on web development, and around the last 2 years I worked there, I have learned a lot about >React, particularly when creating the v2 design editor.
->
->Here are the details of the work I did at Ciptaloka:
->
->- Created the v2 design editor layout using React.
->- Redesigned the website's front page from vanilla CSS to use Foundation 6.
->- Developed interactive UI on mobile editor using Framework7, Backbone.js, and Marionette.js.
->- Created e-mail marketing design templates using Foundation for E-mails.
->- Customized the blog.ciptaloka.com WordPress theme to match the looks and feels of the main site.
+>- ☕ Keeping my coffee warm and my productivity high
+>- 🌱 Having enlightening conversations with my leafy office companions
+>- 🐾 Participating in video calls alongside my furry colleagues
 >
 >---
+>## [Looking Ahead](/work/experience#looking-ahead)
 >
->## What They Say
+>As I reflect on my journey so far, I'm grateful for the opportunities that Amedeo Avogadro Institute and Exprivia have provided me.
+>With each day, I'm excited to:
 >
->&mdash;
+>- 🌟 Continue learning and adapting to new technologies
+>- 🚀 Innovate and contribute to projects that make a difference
+>- 🤝 Collaborate with fellow professionals in the ever-evolving tech landscape
+>
+>Thank you for joining me on this journey, and here's to many more years of growth and success!
+

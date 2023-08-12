@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from "./app.component";
 import {NavLogoComponent} from "./components/nav-bar/nav-logo/nav-logo.component";
 import {NavBarComponent} from "./components/nav-bar/nav-bar.component";
@@ -13,7 +13,7 @@ import {KbdComponent} from "./components/shared/kbd/kbd.component";
 import {QuickAccessComponent} from "./components/shared/quick-access/quick-access.component";
 import {ActionCenterComponent} from "./components/shared/quick-access/action-center/action-center.component";
 import {
-  ActionCenterButtonComponent
+    ActionCenterButtonComponent
 } from "./components/shared/quick-access/action-center-button/action-center-button.component";
 import {PageIndexComponent} from "./contents/page-index/page-index.component";
 import {IndexHeaderComponent} from "./contents/page-index/header/index-header/index-header.component";
@@ -28,60 +28,79 @@ import {AppRoutingModule} from "./app-routing.module";
 import {NgOptimizedImage} from "@angular/common";
 import {GlobalService} from "../services/global-service";
 import {ScrollService} from "../services/scroll-service";
-import { FooterDescriptionComponent } from './components/footer/footer-description/footer-description.component';
-import { FooterGroupComponent } from './components/footer/footer-group/footer-group.component';
-import { FooterLinkComponent } from './components/footer/footer-link/footer-link.component';
-import { HeaderImageComponent } from './contents/page-index/header/header-image/header-image.component';
-import { HeaderImageAnimatedComponent } from './contents/page-index/header/header-image-animated/header-image-animated.component';
-import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
-import { HeaderTechStackComponent } from './contents/page-index/header/header-tech-stack/header-tech-stack.component';
-import { MarkdownComponent } from './components/markdown/markdown.component';
-import { HttpClientModule} from "@angular/common/http";
+import {FooterDescriptionComponent} from './components/footer/footer-description/footer-description.component';
+import {FooterGroupComponent} from './components/footer/footer-group/footer-group.component';
+import {FooterLinkComponent} from './components/footer/footer-link/footer-link.component';
+import {HeaderImageComponent} from './contents/page-index/header/header-image/header-image.component';
+import {
+    HeaderImageAnimatedComponent
+} from './contents/page-index/header/header-image-animated/header-image-animated.component';
+import {PageNotFoundComponent} from './components/pages/page-not-found/page-not-found.component';
+import {HeaderTechStackComponent} from './contents/page-index/header/header-tech-stack/header-tech-stack.component';
+import {MarkdownComponent, SafeHtmlPipe} from './components/markdown/markdown.component';
+import {HttpClientModule} from "@angular/common/http";
+import {TableOfContentsComponent} from './components/table-of-contents/table-of-contents.component';
+import {
+    TableOfContentsLinkComponent
+} from './components/table-of-contents/table-of-contents-link/table-of-contents-link.component';
+import {IsVisibleDirective} from "./utils/directives/visible-directive";
+import { FeaturedCardComponent } from './contents/page-index/header/featured-card/featured-card.component';
+import { HeaderQuoteComponent } from './contents/page-index/header/header-quote/header-quote.component';
+import {AutoTypeDirective} from "./utils/directives/auto-type.directive";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavLogoComponent,
-    NavBarComponent,
-    NavLinkComponent,
-    NavDropdownComponent,
-    NavExpandedComponent,
-    NavIconLinkComponent,
-    SvgIconComponent,
-    NavIconQuickAccessComponent,
-    KbdComponent,
-    QuickAccessComponent,
-    ActionCenterComponent,
-    ActionCenterButtonComponent,
-    PageIndexComponent,
-    IndexHeaderComponent,
-    HeaderTitleComponent,
-    HeaderContactComponent,
-    ButtonContactComponent,
-    ButtonResumeComponent,
-    AvailableForHireComponent,
-    FooterComponent,
-    FooterDescriptionComponent,
-    FooterGroupComponent,
-    FooterLinkComponent,
-    HeaderImageComponent,
-    HeaderImageAnimatedComponent,
-    PageNotFoundComponent,
-    HeaderTechStackComponent,
-    MarkdownComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-    HttpClientModule
-  ],
-  providers: [
-    GlobalService,
-    ScrollService,
-  ],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NavLogoComponent,
+        NavBarComponent,
+        NavLinkComponent,
+        NavDropdownComponent,
+        NavExpandedComponent,
+        NavIconLinkComponent,
+        SvgIconComponent,
+        NavIconQuickAccessComponent,
+        KbdComponent,
+        QuickAccessComponent,
+        ActionCenterComponent,
+        ActionCenterButtonComponent,
+        PageIndexComponent,
+        IndexHeaderComponent,
+        HeaderTitleComponent,
+        HeaderContactComponent,
+        ButtonContactComponent,
+        ButtonResumeComponent,
+        AvailableForHireComponent,
+        FooterComponent,
+        FooterDescriptionComponent,
+        FooterGroupComponent,
+        FooterLinkComponent,
+        HeaderImageComponent,
+        HeaderImageAnimatedComponent,
+        PageNotFoundComponent,
+        HeaderTechStackComponent,
+        MarkdownComponent,
+        SafeHtmlPipe,
+        TableOfContentsComponent,
+        TableOfContentsLinkComponent,
+        IsVisibleDirective,
+        FeaturedCardComponent,
+        PageIndexComponent,
+        HeaderQuoteComponent,
+        AutoTypeDirective
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        HttpClientModule
+    ],
+    providers: [
+        GlobalService,
+        ScrollService,
+    ],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

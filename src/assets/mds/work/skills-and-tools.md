@@ -8,135 +8,116 @@
 
 ---
 
-## A look at all the programming languages, libraries, and tools I've worked with.
+## Comprehensive Full-Stack Developer Proficient in Diverse Technologies
 
 ---
-
->I started my career as a web developer about **{new Date().getFullYear() - 2016} years ago**. I've tried some programming languages >and tech stack, both Back-End, and Front-End.
->
->Even though the scope of web development is broad, I was very interested and focused on **Front-End Development** and **UI/UX Design**.
 >
 >---
->
->## Front-End Developer
->
->I love creating something that is clean and minimalistic, attractive and has value, and of course, easy to use.
->
->I really enjoy creating websites with **rich UI components**, including:
->
->- **Web application**,
->- **Documentation pages**,
->- **CMS contents layout**,
->- **Dashboard layout**,
->- and others.
->
->But I still like to make simple website pages like **landing pages**. So, what tools did I feel comfortable using during the website >creation?
->
->### TypeScript
->
->First of all, the programming language. I'm very used to using **TypeScript**, although website creation can be done using PHP, >Python, etc.
->
->The JavaScript superset—TypeScript—has accompanied me for **about {new Date().getFullYear() - 2018} years**.
->
->### React
->
->I really enjoy building single page application websites and React is my go-to library.
->
->I've been using it **since 2018 ({new Date().getFullYear() - 2018} years)** and have become quite proficient with it.
->
->### Tailwind CSS
->
->For now, I love using Tailwind CSS for styling, even though I've been using SCSS for a longer time ({2020 - 2016} years).
->
->I'm still new to Tailwind CSS, but **I'm really comfortable** using it and I think it's a great tool.
->
->### Framer Motion
->
->For animations, I am more comfortable using Framer Motion. Creating animations using JavaScript has **never been as easy as using >Framer Motion**.
->
->### Next.js
->
->I've been using CRA for a few years, but since discovering Next.js, I don't think I would want to use any other web framework. **It's >just that good!**
+> 
+>This document highlights my prowess as an accomplished **Full-Stack Developer** with proficiency across a spectrum of languages, 
+>frameworks, and tools. I adeptly navigate the entire development lifecycle, leveraging a versatile skill set to craft and deploy web 
+>applications.
 >
 >---
->
->## UI/UX Designer
->
->Designing user interfaces is something I'm really good at and I've been a UI/UX designer **from 2018 to 2021 ({2021 - 2018} years)**.
->
->I'm always thinking about how to create the best possible user experience, in addition to creating visually appealing user interfaces.
->
->The biggest challenge is finding the balance between creating a great user interface and an amazing user experience.
+>## [Technical Skills](/work/skills-and-tools#technical-skills)
 >
 >---
+>### [Front-End Development](/work/skills-and-tools#front-end-development)
 >
->## Detail and Summary
+>- **Languages**: HTML, CSS, TypeScript, Angular
+>- **Frameworks**: Angular, AngularJS, Apache
+>- **Responsive Design**: Optimizing user experiences on varied devices
+>- **UI/UX**: Designing user-focused, aesthetic interfaces
+>- **Browser Compatibility**: Ensuring cross-browser consistency
 >
->I represent all data in labels to make it easier to read. The **underline indicator** shows how often I used the related item, e.g.:
+>---
+>### [Back-End Development](/work/skills-and-tools#back-end-development)
 >
-><br />
-><HStack spacing={8}>
->  <Label indicator={100}>Frequently Used</Label>
->  <Label indicator={25}>Occasionally</Label>
-></HStack>
+>- **Languages**: Java, Wso2, SQL, PL/SQL
+>- **API Development**: Secure RESTful API design and implementation
+>- **Databases**: MySQL, PostgreSQL
+>- **Server Management**: JBoss, Apache
 >
->### Programming Languages
+>---
+>### [Full-Stack Proficiency](/work/skills-and-tools#full-stack-proficiency)
 >
-><VStack spacing={12}>
->  <HStack spacing={8}>
->    <Label indicator={100}>TypeScript</Label>
->    <Label indicator={100}>JavaScript</Label>
->    <Label indicator={100}>HTML</Label>
->    <Label indicator={100}>CSS/SCSS</Label>
->  </HStack>
->  <HStack spacing={8}>
->    <Label indicator={50}>PHP</Label>
->    <Label indicator={25}>SQL</Label>
->  </HStack>
-></VStack>
+>- **Version Control**: Proficient with Git for collaboration
+>- **Agile Methodology**: Adapting within Agile frameworks
+>- **Problem-Solving**: Solution-driven approach
 >
->### Technologies
+>---
+>## [Additional Skills](/work/skills-and-tools#additional-skills)
 >
-><VStack spacing={12}>
->  <HStack spacing={8}>
->    <Label indicator={100}>Tailwind CSS</Label>
->    <Label indicator={75}>Material UI</Label>
->    <Label indicator={50}>Chakra UI</Label>
->    <Label indicator={50}>Bootstrap</Label>
->    <Label indicator={50}>Zurb Foundation</Label>
->  </HStack>
->  <HStack spacing={8}>
->    <Label indicator={100}>React</Label>
->    <Label indicator={50}>Next.js</Label>
->    <Label indicator={50}>Framer Motion</Label>
->    <Label indicator={50}>Storybook</Label>
->    <Label indicator={50}>Framework7</Label>
->    <Label indicator={25}>Redux</Label>
->    <Label indicator={25}>Webpack</Label>
->    <Label indicator={25}>Gulp</Label>
->    <Label indicator={25}>Backbone.js</Label>
->    <Label indicator={25}>Marionette.js</Label>
->    <Label indicator={25}>WordPress</Label>
->  </HStack>
->  <HStack spacing={8}>
->    <Label indicator={25}>Express</Label>
->    <Label indicator={25}>Redis</Label>
->    <Label indicator={25}>MongoDB</Label>
->  </HStack>
-></VStack>
+>- **Communication**: Bridging technical and non-technical stakeholders
+>- **Project Management**: Efficient task and timeline management
+>- **Collaboration**: Seamless cross-functional teamwork
+>- **Continuous Learning**: Staying current with trends
 >
->### Softwares and Tools
+>---
+>## [Tools & IDEs](/work/skills-and-tools#tools-e-ides)
 >
-><VStack spacing={12}>
->  <HStack spacing={8}>
->    <Label indicator={100}>VS Code</Label>
->    <Label indicator={100}>Node.js</Label>
->    <Label indicator={100}>Git</Label>
->    <Label indicator={50}>Sourcetree</Label>
->  </HStack>
->  <HStack spacing={8}>
->    <Label indicator={100}>Figma</Label>
->    <Label indicator={50}>Inkscape</Label>
->    <Label indicator={25}>Photoshop</Label>
->  </HStack>
-></VStack>
+>- **IDEs**: Visual Studio Code, IntelliJ IDEA, DBEaver, Xcode
+>- **Testing Tools**: SoapUI for API testing
+>- **Reporting Tools**: JasperSoft Studio for reports
+>
+>---
+>## [Detail and Summary](/work/skills-and-tools#detail-and-summary)
+>
+>I represent all data in labels to make it easier to read. The **underline indicator** shows how often I used the related item, for example:
+>
+><div class="chips">
+>  <label style="--hover-text: 50%">Frequently Used</label>
+>  <label style="--hover-text: 100%">Occasionally</label>
+></div>
+>
+>---
+>### [Programming Languages](/work/skills-and-tools#programming-languages)
+>
+><div class="chips">
+>  <label style="--hover-text: 60%">TypeScript</label>
+>  <label style="--hover-text: 50%">JavaScript</label>
+>  <label style="--hover-text: 80%">HTML</label>
+>  <label style="--hover-text: 70%">CSS/SCSS</label>
+>  <label style="--hover-text: 60%">PHP</label>
+>  <label style="--hover-text: 70%">SQL</label>
+>  <label style="--hover-text: 70%">PL-SQL</label>
+>  <label style="--hover-text: 70%">WSO2</label>
+>  <label style="--hover-text: 70%">Java</label>
+>  <label style="--hover-text: 40%">JavaFX</label>
+>  <label style="--hover-text: 20%">C/C++</label>
+>  <label style="--hover-text: 20%">C#</label>
+>  <label style="--hover-text: 30%">Swift</label>
+>  <label style="--hover-text: 30%">Kotlin</label>
+>  <label style="--hover-text: 50%">Flutter</label>
+></div>
+>
+>---
+>### [Technologies](/work/skills-and-tools#technologies)
+>
+><div class="chips">
+>  <label style="--hover-text: 60%">Tailwind CSS</label>
+>  <label style="--hover-text: 40%">Bootstrap</label>
+>  <label style="--hover-text: 30%">React</label>
+>  <label style="--hover-text: 20%">Next.js</label>
+>  <label style="--hover-text: 60%">Maven</label>
+>  <label style="--hover-text: 70%">JSON</label>
+>  <label style="--hover-text: 70%">XML</label>
+></div>
+>
+>---
+>### [Softwares and Tools](/work/skills-and-tools#softwares-and-tools)
+>
+><div class="chips">
+>  <label style="--hover-text: 60%">VS Code</label>
+>  <label style="--hover-text: 60%">IntelliJ IDEA</label>
+>  <label style="--hover-text: 50%">Git</label>
+>  <label style="--hover-text: 20%">Svn</label>
+>  <label style="--hover-text: 60%">DB Eaver</label>
+>  <label style="--hover-text: 30%">Xcode</label>
+>  <label style="--hover-text: 60%">SoapUI</label>
+></div>
+>
+>---
+>## [Conclusion](/work/skills-and-tools#conclusion)
+>
+>With mastery in diverse languages (Java, Wso2, SQL, PL/SQL, TypeScript, HTML, XML, JSON, PHP, Kotlin, Swift) and familiarity with an array of tools, I'm an adept Full-Stack Developer. My adaptability and commitment, combined with extensive skills, empower me to excel in varied development scenarios.

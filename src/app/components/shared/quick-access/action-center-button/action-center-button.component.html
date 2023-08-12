@@ -5,11 +5,16 @@
       'bg-white/50': !active
     }">
 
-  <div *ngIf="active; else notActive">
+  <div *ngIf="icons && icons.length<2; else multipleIcons">
     <svg-icon [icon]="icons?.at(0)"/>
   </div>
-  <ng-template #notActive>
-    <svg-icon [icon]="icons?.at(1)"/>
+  <ng-template #multipleIcons>
+    <div *ngIf="active; else notActive">
+      <svg-icon [icon]="icons!.at(0)"/>
+    </div>
+    <ng-template #notActive>
+      <svg-icon [icon]="icons!.at(1)"/>
+    </ng-template>
   </ng-template>
 
   <div class="text-left text-[13px] font-medium dark:font-normal">

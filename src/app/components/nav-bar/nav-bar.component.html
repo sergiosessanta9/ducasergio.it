@@ -1,21 +1,21 @@
 <div class="fixed top-0 right-0 left-0 z-[1000] fm:absolute">
   <div
-    [ngClass]="{'fixed inset-0 h-16': true, 'border-divider-light border-b bg-white/70 backdrop-blur dark:border-divider-dark dark:bg-slate-900/80': isScrolled, 'fm:hidden': true}"></div>
-  <div [ngClass]="{'h-2': true, '-mt-2': isScrolled}"></div>
+    [ngClass]="{'fixed inset-0 h-16': true, 'border-divider-light border-b bg-white/70 backdrop-blur-md dark:border-divider-dark dark:bg-slate-900/80': global.isScrolled, 'fm:hidden': true}"></div>
+  <div [ngClass]="{'h-2': true, '-mt-2': global.isScrolled}" [ngStyle]="{transition: 'margin-top 0.20s ease'}"></div>
   <div class="content-wrapper-max">
     <div class="relative z-50 flex h-16 items-center justify-between px-2 text-sm md:px-4">
-      <nav class="flex md:gap-2" data-accent="violet">
-        <nav-logo href="/" title="Sergio"/>
+      <nav class="flex md:gap-2">
+        <nav-logo href="/" title="Sergio" data-accent="violet"/>
 
         <!-- Website Links -->
         <ul class="flex items-center md:gap-1">
-          <li *ngFor="let link of baseLinks" class="nav-link cursor-pointer">
+          <li *ngFor="let link of baseLinks" class="nav-link cursor-pointer" data-accent="violet">
             <nav-link [href]="link.href" [title]="link.title"/>
           </li>
-          <li class="lg:hidden" data-accent="blue">
+          <li class="lg:hidden">
             <nav-dropdown title="Work" [items]="appLinks"/>
           </li>
-          <li class="hidden lg:block" data-accent="blue">
+          <li class="hidden lg:block">
             <nav-expanded title="Work" [items]="appLinks"/>
           </li>
         </ul>

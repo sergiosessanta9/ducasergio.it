@@ -8,36 +8,38 @@
 
 ---
 
-## Get in touch with me anytime, through social media, e-mail, or phone number.
+## Get in touch with me
 
 ---
 
->Just a friendly reminder that the information provided here is for **business purposes only**. If you have any questions, feel free to chat with me directly on my social media.
+>Hey there, lovely human! 🌟 Want to reach out to me? I'm all ears, or well, all keyboard! Whether you're a fellow techie, a potential collaborator, or just someone who loves a good chat, I'm here for you.
 >
->I appreciate your understanding in using this responsibly.
->
->---
->
->## Contact
->
->| Contact | Detail                  |
->| :------ | :---------------------- |
->| Address | Turin, Italy            |
->| E-mail  | business@ducaergio.it   |
->
->If you need any further information, such as my phone number, please do not hesitate to send me an email first.
+>Friendly reminder: The contact deets below are for <mark>*serious*</mark> business, but don't be shy to drop a "Hello!" on my socials too. Let's keep it professional, yet fun!
 >
 >---
 >
->## Social Media
+>## [Hit Me Up](/work/contact#hit-me-up)
 >
->If you want to find me on social media, just search for **@enjidev**. That's my username on almost all platforms, so it should be easy to find me.
 >
->But if you're short on time, I've included some links to the social media platforms I use most frequently below.
+>| Contact | Detail                                                |
+>| :------ |:------------------------------------------------------|
+>| Address | Somewhere in the tech cosmos                          |
+>| E-mail  | [business@ducaergio.it](mailto:business@ducaergio.it) |
+>
+>Got questions? Need help? Just want to chat about the latest tech trends? Shoot me an email and let's geek out together!
+>
+>---
+>
+>## [Connect & Chill](/work/contact#connect-e-chill)
+>
+>Wanna see what's poppin' on my online playgrounds? Check out these links:
 >
 >| Social Media | Profile URL                                                                                            |
 >| :----------- | :----------------------------------------------------------------------------------------------------- |
 >| LinkedIn     | [https://www.linkedin.com/in/sergio-duca-a9756819a](https://www.linkedin.com/in/sergio-duca-a9756819a) |
 >| Twitter      | [https://twitter.com/sergioduca639](https://twitter.com/sergioduca639)                                 |
 >| Instagram    | [https://github.com/sergiosessanta9](https://github.com/sergiosessanta9)                               |
+> 
+>---
+> I promise, my virtual door is always open. Let's connect and make some digital magic happen! 🚀👾
 

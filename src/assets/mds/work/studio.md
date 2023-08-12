@@ -14,74 +14,72 @@
 
 >![Current enjidev workspace](/assets/images/current-workspace.jpeg)
 >
->One of the most important things for me when working from home is having the right tools. So, let's start with my main device - the >computer.
+>One of the most important things for me when working from home is having the right tools.<br>
+>So, let's start with my main device - <mark>the computer</mark>.
+> 
+>---
+>## [Computer](/work/studio#computer)
 >
->## Computer
+>| Name       | Detail                     |
+>| ---------- |----------------------------|
+>| OS         | Windows 11 Home 64-bit     |
+>| Proccessor | Intel Core i5-6400 6th Gen |
+>| RAM        | 8GB 2400 MHz DDR4          |
+>| GPU        | RTX GTX1060 3GB GDDR5      |
+>| Storage    | SSD 256GB SATA3            |
 >
->| Name       | Detail                       |
->| ---------- | ---------------------------- |
->| OS         | Windows 11 Home 64-bit       |
->| Proccessor | Intel Core i3-12100 12th Gen |
->| RAM        | 32GB 3600Mhz DDR4            |
->| GPU        | RTX 3060 12GB GDDR6          |
->| Storage    | NVMe M.2 1TB Gen4x4          |
+>My computer is configured with hardware that is not very modern but provides smooth performance for a variety of tasks. It's equipped to handle graphics-intensive applications and has decent storage for files and programs. Overall, it's a reliable system that helps me get things done efficiently.
 >
->This computer may not have the latest specs, but it runs incredibly fast and smooth! It's perfect for web development, even for larger >or heavier projects.
+>_______
+>### [Support Device](/work/studio#support-device)
+>---
 >
->The 32GB of RAM also ensures that multitasking is a breeze!
+>In my setup, there's this trusty MacBook that has been an absolute game-changer for my work. 
+>Even after four years, this laptop is still going strong and impressively fast. It's remarkable how it has managed to maintain its speed and performance over the years, keeping up with my daily demands without a hitch.
 >
->### Support Device
+>When I reflect on how much this MacBook has aided me, it's more than just a work tool—it's become a reliable companion that's always there to help me conquer even the most demanding tasks and navigate through daily challenges. Its quickness and responsiveness are truly its standout features, making me feel fortunate for the investment I made.
 >
->With my trusty **MacBook Pro M2** as my backup work companion, I've the freedom to work from anywhere.
+>While in the tech world, four years might seem like an eternity, my MacBook proves that quality and reliability can stand the test of time. Every time I open it up and dive into my work, it serves as a reminder that well-made decisions are truly worth it. I'm grateful to have a laptop that continues to deliver at its best, and I'm excited to see what other challenges it'll tackle alongside me.
 >
->Its powerful performance and long battery life ensure that productivity knows no bounds, whether I'm at a coffee shop or exploring >remote locations.
+>-------
+>## [Display](/work/studio#display)
+>---
 >
->It also helps me perform comprehensive **compatibility** checks for websites on the Safari browser, which is exclusive to Mac devices.
+>My workstation is perfectly optimized for development activities and revolves around a large 32-inch monitor.<br>
+>This setup is a real game changer as it allows me to easily handle coding and live previews on separate screens. 
+>Everything is at your fingertips for a smoother and more efficient workflow!
 >
->I also have an iPhone, which comes in handy for checking website compatibility specifically on Safari mobile.
+>---
+>### [Monitor](/work/studio#monitor)
 >
->## Display
+>| Name         | Detail                       |
+>| ------------ |------------------------------|
+>| Model        | Samsung Smart Monitor M8 32" |
+>| Resolutions  | UHD 4K 3840x2160             |
+>| Aspect ratio | 16:9                         |
+>| Refresh rate | 60 Hz                        |
 >
->The dual monitor setup maximizes my web development workflow. I can code on one screen while previewing live on the other — no more ><span class="text-xs"><Kbd>Alt</Kbd> + <Kbd>Tab</Kbd></span> necessary for faster, more efficient work!
+>---
+>## [Peripherals](/work/studio#peripherals)
 >
->Need a website with extra wide breakpoint? I've got you covered with my ultrawide monitor.
+>| Name     | Detail               |
+>|----------|----------------------|
+>| Keyboard | Logitech POP Keys    | 
+>| Mouse    | Logitech MX Master 3 |
+>| Tablet   | iPad Air 2021        |
+>| Tablet 2 | iPad Mini 2022       |
 >
->### Primary
+>---
+>## [Conferencing Devices](/work/studio#conferencing-devices)
 >
->| Name         | Detail                |
->| ------------ | --------------------- |
->| Model        | Mi Curved Monitor 34" |
->| Resolutions  | WQHD 3440x1440        |
->| Aspect ratio | 21:9                  |
->| Refresh rate | 144 Hz                |
+>| Name            | Detail              |
+>|-----------------|---------------------|
+>| WebCam          | Samsung SlimFit Cam |
+>| Headphone       | Beats Studio3       |
 >
->### Secondary
+>---
+>## [Others](/work/studio#others)
 >
->| Name         | Detail                 |
->| ------------ | ---------------------- |
->| Model        | Mi Desktop Monitor 27" |
->| Resolutions  | FHD 1920x1080          |
->| Aspect ratio | 16:9                   |
->| Refresh rate | 75 Hz                  |
->
->## Peripherals
->
->| Name       | Detail             |
->| ---------- | ------------------ |
->| Keyboard   | Rexus Daiva RX-D68 |
->| Mouse      | Rexus Xierra X15   |
->| Pen Tablet | One by Wacom       |
->
->## Conferencing Devices
->
->| Name            | Detail                |
->| --------------- | --------------------- |
->| Microphone      | Rode Podmic (Dynamic) |
->| Headphone       | Samson SR850          |
->| Audio interface | EVO 4 by Audient      |
->
->## Others
->
->| Name     | Detail      |
->| -------- | ----------- |
->| Internet | 50Mbps WiFi |
+>| Name     | Detail                       |
+>| -------- |------------------------------|
+>| Internet | 900Mbps ~ 1.1Gbps Iliad WiFi |

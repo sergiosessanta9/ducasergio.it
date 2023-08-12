@@ -1,3 +1,39 @@
-<div data-accent="blue">
-    <div [innerHTML]="renderedHtml" class="mdx-contents"></div>
+<div *ngIf="error == null; else errorPage" data-accent="blueblue" appIsVisible [watchedElementIds]="items">
+  <header id="page-header"
+          class="mdx-contents background-grid background-grid--fade-out border-divider-light z-[900] mb-10 border-b pt-32 pb-10 md:mb-0 md:border-none md:pb-20 md:pt-40 dark:border-divider-dark">
+    <div class="content-wrapper">
+      <div style="opacity: 1; transform: none;">
+        <span>
+          {{caption}}
+        </span>
+      </div>
+      <div style="opacity: 1; transform: none;">
+        <h1>
+          {{title}}
+        </h1>
+      </div>
+      <div style="opacity: 1; transform: none;">
+        <p>
+          {{description}}
+        </p>
+      </div>
+    </div>
+  </header>
+  <div class="content-wrapper flex-shrink-0 overflow-hidden lg:overflow-visible">
+    <div class="flex flex-row-reverse ">
+      <div class="-mt-48 hidden lg:block">
+        <div class="sticky top-24 z-[901] w-64 xl:w-[272px] fm:relative fm:top-0">
+          <table-of-contents [currentPage]="path" [items]="items" [show]="loaded"/>
+        </div>
+      </div>
+      <div id="main-contents" class="min-w-0 flex-2">
+        <div [innerHTML]="renderedHtml | safeHtml" class="mdx-contents" (load)="scrollToElement('contact')"></div>
+      </div>
+      <div class="border-divider-light hidden border-l dark:border-divider-dark lg:block">
+      </div>
+    </div>
+  </div>
 </div>
+<ng-template #errorPage>
+  <page-not-found/>
+</ng-template>

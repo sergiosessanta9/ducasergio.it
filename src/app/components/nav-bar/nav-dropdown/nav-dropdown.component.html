@@ -12,7 +12,8 @@
     <ng-container *ngFor="let item of items">
       <a [routerLink]="item.href"
          [@menuItemAnimation]="animationState"
-         class="nav-link h-8 cursor-pointer text-xs hover:bg-slate-200/40 dark:hover:bg-slate-600/10;">
+         class="nav-link h-8 cursor-pointer text-xs hover:bg-slate-200/40 dark:hover:bg-slate-600/10;"
+         (click)="toggleDropdown()">
         {{ item.title }}
       </a>
     </ng-container>

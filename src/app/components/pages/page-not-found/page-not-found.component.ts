@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Icons} from "../../shared/icons";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {GlobalService} from "../../../../services/global-service";
 
 @Component({
   selector: 'page-not-found',
@@ -31,7 +32,12 @@ export class PageNotFoundComponent implements OnInit{
   textState: 'hide' | 'show' = 'hide';
   descriptionState: 'hide' | 'show' = 'hide';
 
+  constructor(private globalService: GlobalService) {
+  }
+
   ngOnInit(): void {
+    const theme = this.globalService.getTheme();
+    document.documentElement.classList.add(theme);
     setTimeout(() => {
       this.animationState = "show";
       this.textState = "show";

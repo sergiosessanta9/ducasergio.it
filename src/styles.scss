@@ -18,3 +18,23 @@
 
 @import 'tailwindcss/utilities';
 
+.dark .dark\:border-divider-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240/var(--tw-border-opacity))
+}
+
+.dark .dark\:border-divider-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 41 59/var(--tw-border-opacity))
+}
+
+.border-divider-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 41 59/var(--tw-border-opacity))
+}
+
+.border-divider-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240/var(--tw-border-opacity))
+}
+

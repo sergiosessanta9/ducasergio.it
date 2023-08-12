@@ -17,6 +17,7 @@
   html {
     -webkit-tap-highlight-color: transparent;
     @apply scroll-smooth;
+    scroll-padding-top: 5.6rem;
   }
 
   html,

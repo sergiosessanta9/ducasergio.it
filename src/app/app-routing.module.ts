@@ -10,36 +10,35 @@ const routes: Routes = [
     path: '',
     component: PageIndexComponent,
     children: [
-      {
-        path: 'test',  // child route path
-        title: 'Test',
-        component: KbdComponent,  // child route component that the router renders
-      },
     ],
   },
   {
    path: 'work',
    children: [
      {
-       path: 'contact',
-       title: 'Contact',
+       path: 'skills-and-tools',
        component: MarkdownComponent
      },
      {
        path: 'experience',
-       title: 'Experience',
-       component: MarkdownComponent
-     },
-     {
-       path: 'studio',
-       title: 'Studio',
        component: MarkdownComponent
      },
      {
        path: 'skills-and-tools',
-       title: 'Skills and Tools',
        component: MarkdownComponent
-     }
+     },
+     {
+       path: 'studio',
+       component: MarkdownComponent
+     },
+     {
+       path: 'contact',
+       component: MarkdownComponent
+     },
+     {
+       path: '**',
+       component: PageNotFoundComponent
+     },
    ]
   },
   { path: '**', component: PageNotFoundComponent }

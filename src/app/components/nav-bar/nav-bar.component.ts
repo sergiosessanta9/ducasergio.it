@@ -11,12 +11,10 @@ import {Links} from "../shared/links";
 })
 export class NavBarComponent {
 
-  constructor(private scrollService: ScrollService) {
+  constructor(private scrollService: ScrollService, protected global: GlobalService) {
   }
 
   @Output() onOpenQuickAccess = new EventEmitter<any>();
-
-  protected isScrolled = false;
 
   protected baseLinks = [
     {
@@ -47,7 +45,7 @@ export class NavBarComponent {
 
   ngOnInit() {
     this.scrollService.scrollEvent.subscribe((event) => {
-      this.isScrolled = window.scrollY > 0;
+      this.global.isScrolled = window.scrollY > 60;
     });
   }
 
