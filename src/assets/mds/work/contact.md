@@ -14,7 +14,7 @@
 
 >Hey there, lovely human! 🌟 Want to reach out to me? I'm all ears, or well, all keyboard! Whether you're a fellow techie, a potential collaborator, or just someone who loves a good chat, I'm here for you.
 >
->Friendly reminder: The contact deets below are for <mark>*serious*</mark> business, but don't be shy to drop a "Hello!" on my socials too. Let's keep it professional, yet fun!
+>Friendly reminder: The contact deets below are for <mark>***serious***</mark> business, but don't be shy to drop a "Hello!" on my socials too. Let's keep it professional, yet fun!
 >
 >---
 >
