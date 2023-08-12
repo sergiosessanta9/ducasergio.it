@@ -12,7 +12,7 @@
 
 ---
 
->![Current enjidev workspace](/assets/images/current-workspace.jpeg)
+>![Current workspace](/assets/images/current-workspace.jpeg)
 >
 >One of the most important things for me when working from home is having the right tools.<br>
 >So, let's start with my main device - <mark>the computer</mark>.
