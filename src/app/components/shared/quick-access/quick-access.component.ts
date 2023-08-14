@@ -17,6 +17,12 @@ import {GlobalService} from "../../../../services/global-service";
       state('show', style({opacity: 1, visibility: 'visible'})),
       transition('hide => show', [animate(`0.18s ease-in`)]),
       transition('show => hide', [animate(`0.18s ease-out`)]),
+    ]),
+    trigger('blur', [
+      state('hide', style({opacity: 0, visibility: 'hidden'})),
+      state('show', style({opacity: 1, visibility: 'visible'})),
+      transition('hide => show', [animate(`0.18s ease-in`)]),
+      transition('show => hide', [animate(`0.18s ease-out`)]),
     ])
   ],
   templateUrl: './quick-access.component.html',

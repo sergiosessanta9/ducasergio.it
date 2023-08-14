@@ -2,8 +2,11 @@
   <app-nav-bar/>
 </header>
 <quick-access/>
-<main (scroll)="onScroll($event)">
-  <router-outlet></router-outlet>
-</main>
-<app-footer>Footer</app-footer>
-
+<div class="{{global.isQuickAccessOpen ? 'overflow-hidden':''}} {{global.isQuickAccessOpen ? 'min-h-[100vh]':''}}">
+  <main class="flex-1" (scroll)="onScroll($event)">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<app-footer class="mt-auto">Footer</app-footer>

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Icons} from "../../shared/icons";
+import {Icons} from "../shared/icons";
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {GlobalService} from "../../../../services/global-service";
+import {GlobalService} from "../../../services/global-service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'page-not-found',
@@ -32,7 +33,7 @@ export class PageNotFoundComponent implements OnInit{
   textState: 'hide' | 'show' = 'hide';
   descriptionState: 'hide' | 'show' = 'hide';
 
-  constructor(private globalService: GlobalService) {
+  constructor(private globalService: GlobalService, protected location: Location) {
   }
 
   ngOnInit(): void {

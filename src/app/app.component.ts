@@ -1,6 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {GlobalService} from "../services/global-service";
 import {ScrollService} from "../services/scroll-service";
+import {NavigationEnd, NavigationStart, Router, Scroll} from "@angular/router";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import {ScrollService} from "../services/scroll-service";
 export class AppComponent implements OnInit{
   title = 'ducasergio.it';
 
-  constructor(private global: GlobalService, private scrollService: ScrollService) {}
+  constructor(protected global: GlobalService, private scrollService: ScrollService,private router: Router) {}
 
   openQuickAccess(): void {
     this.global.isQuickAccessOpen = true;

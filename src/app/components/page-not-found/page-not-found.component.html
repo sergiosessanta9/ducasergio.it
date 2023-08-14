@@ -14,10 +14,10 @@
           perpetual black hole. Let me help guide you out and get you back home.</p>
         <div [@descriptionAnimation]="animationState" class="whitespace-nowrap inline-block lg:text-center md:text-left">
           <div class="flex gap-4 mb-4 md:mb-6">
-            <a href="#" class="button button--solid min-w-[128px] md:button--big" onclick="history.back()">Go back</a>
+            <a class="button button--solid min-w-[128px] md:button--big cursor-pointer" (click)="location.back()">Go back</a>
             <a
-              rel="noreferrer nofollow"
               href="/"
+              rel="noreferrer nofollow"
               class="button button--ghost px-2 md:button--big md:px-2">
               HOME
             </a>

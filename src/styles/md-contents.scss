@@ -56,13 +56,13 @@
     @apply relative;
 
     &::before{
-      @apply content-[''] hidden absolute h-full aspect-square border rounded-xl -left-12 border-divider-light dark:border-divider-dark;
+      @apply content-[''] hidden absolute h-full aspect-square border rounded-lg md:rounded-xl -left-9 md:-left-12 border-divider-light dark:border-divider-dark;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ctext x='10' y='10' font-size='13' text-anchor='middle' dy='.3em'%3E%23%3C/text%3E%3C/svg%3E");
       @apply dark:brightness-50 dark:invert;
     }
 
     &:hover::before{
-      @apply block;
+      @apply sm:block;
     }
   }
 
@@ -70,13 +70,13 @@
     @apply relative;
 
     &::before{
-      @apply content-[''] hidden absolute h-full aspect-square border rounded-lg -left-10 border-divider-light dark:border-divider-dark;
+      @apply content-[''] hidden absolute h-full aspect-square border rounded-lg -left-8 md:-left-10 border-divider-light dark:border-divider-dark;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ctext x='10' y='10' font-size='13' text-anchor='middle' dy='.3em'%3E%23%3C/text%3E%3C/svg%3E");
       @apply dark:brightness-50 dark:invert;
     }
 
     &:hover::before{
-      @apply block;
+      @apply sm:block;
     }
   }
 

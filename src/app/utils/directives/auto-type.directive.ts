@@ -53,10 +53,8 @@ export class AutoTypeDirective implements AfterViewInit, OnDestroy {
 
   private initializeTextElements() {
     this.textElements.forEach(textElement => {
-      console.log(textElement.textContent)
       this.texts.push(textElement.textContent || '');
       textElement.textContent = '';
-      console.log(textElement.textContent)
     });
   }
 

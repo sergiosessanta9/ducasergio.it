@@ -38,7 +38,6 @@ export class PageIndexComponent implements AfterContentInit, OnInit {
   }
 
   ngOnInit(): void{
-    console.log('INIT')
     const theme = this.globalService.getTheme();
     document.documentElement.classList.add(theme);
     document.documentElement.setAttribute('data-accent', this.globalService.getAccentColor());

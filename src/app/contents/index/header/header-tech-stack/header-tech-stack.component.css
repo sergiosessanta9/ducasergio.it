@@ -13,12 +13,16 @@ svg-icon{
   @apply transition duration-200;
   @apply fill-current;
 
+  /*
+
   &[style*="--hover-color"] {
-    --default-color: fill-current; /* Set a default color */
+    --default-color: fill-current;
     fill: var(--default-color);
   }
 
   &:hover {
-    fill: var(--hover-color, var(--default-color)); /* Use the hover color or default color */
+    fill: var(--hover-color, var(--default-color));
   }
+  
+   */
 }

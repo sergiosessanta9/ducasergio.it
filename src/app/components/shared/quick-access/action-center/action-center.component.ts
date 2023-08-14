@@ -18,14 +18,14 @@ import {Icons} from "../../icons";
       transition('false => true', [animate(`0.084s ease-out`)]),
     ]),
     trigger('palette', [
-      state('false', style({opacity: 0, 'zIndex': -1})),
-      state('true', style({opacity: 1, 'zIndex': 1})),
+      state('false', style({opacity: 0, 'zIndex': -1, height: 0})),
+      state('true', style({opacity: 1, 'zIndex': 1, height: '100%'})),
       transition('false => true', [animate(`0.3s ease`)]),
       transition('true => false', [animate(`0.3s ease`)]),
     ]),
     trigger('paletteList', [
       state('false', style({visibility: 'hidden', height: '0%'})),
-      state('true', style({visibility: 'visible', height: 'auto'})),
+      state('true', style({visibility: 'visible', height: '100%'})),
       transition('* <=> *', [animate(`20s ease`)]),
     ])
   ],
@@ -58,10 +58,7 @@ export class ActionCenterComponent implements OnInit{
   }
 
   toggleFocusMode() {
-    console.log('switch')
     this.paletteOpen = !this.paletteOpen;
-    this.accentColor = 'orange';
-    this.global.setAccentColor(this.accentColor);
   }
 
   startAnimation(){

@@ -1,0 +1,28 @@
+<div role="presentation"
+     class="border-divider-light pointer-events-none flex h-full w-full select-none flex-col overflow-hidden rounded-xl border bg-white dark:border-divider-dark dark:bg-[#0c1222]">
+
+    <div class="border-divider-light relative box-border border-b dark:border-divider-dark"
+         [ngClass]="{ 'h-20': isWithBrowserTabs, 'h-10': !isWithBrowserTabs }">
+        <div class="absolute left-4 top-0 flex h-10 items-center gap-1.5">
+            <div class="h-3 w-3 rounded-full bg-red-300 dark:bg-slate-500"></div>
+            <div class="h-3 w-3 rounded-full bg-amber-300 dark:bg-slate-500"></div>
+            <div class="h-3 w-3 rounded-full bg-green-300 dark:bg-slate-500"></div>
+        </div>
+        <ng-container *ngIf="type == 'browser'">
+            <div class="flex h-10 items-center justify-center">
+                <skeleton [width]="160"/>
+            </div>
+            <div class="mt-2 flex gap-2 px-3" *ngIf="isWithBrowserTabs()">
+                <app-browser-tab
+                        *ngFor="let tab of browserTabs"
+                        [icon]="tab.icon"
+                        [title]="tab.title"
+                        [isActive]="tab.isActive"
+                ></app-browser-tab>
+            </div>
+        </ng-container>
+    </div>
+    <div class="flex-1 overflow-hidden">
+        <ng-content></ng-content>
+    </div>
+</div>

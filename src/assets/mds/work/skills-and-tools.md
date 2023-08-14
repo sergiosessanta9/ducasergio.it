@@ -66,8 +66,8 @@
 >I represent all data in labels to make it easier to read. The **underline indicator** shows how often I used the related item, for example:
 >
 ><div class="chips">
->  <label style="--hover-text: 50%">Frequently Used</label>
->  <label style="--hover-text: 100%">Occasionally</label>
+>  <label style="--hover-text: 80%">Frequently Used</label>
+>  <label style="--hover-text: 20%">Occasionally</label>
 ></div>
 >
 >---

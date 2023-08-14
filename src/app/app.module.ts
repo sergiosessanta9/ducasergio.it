@@ -15,38 +15,52 @@ import {ActionCenterComponent} from "./components/shared/quick-access/action-cen
 import {
     ActionCenterButtonComponent
 } from "./components/shared/quick-access/action-center-button/action-center-button.component";
-import {PageIndexComponent} from "./contents/page-index/page-index.component";
-import {IndexHeaderComponent} from "./contents/page-index/header/index-header/index-header.component";
-import {HeaderTitleComponent} from "./contents/page-index/header/header-title/header-title.component";
-import {HeaderContactComponent} from "./contents/page-index/header/header-contact/header-contact.component";
+import {PageIndexComponent} from "./contents/index/page-index.component";
+import {IndexHeaderComponent} from "./contents/index/header/index-header/index-header.component";
+import {HeaderTitleComponent} from "./contents/index/header/header-title/header-title.component";
+import {HeaderContactComponent} from "./contents/index/header/header-contact/header-contact.component";
 import {ButtonContactComponent} from "./components/shared/button-contact/button-contact.component";
 import {ButtonResumeComponent} from "./components/shared/button-resume/button-resume.component";
 import {AvailableForHireComponent} from "./components/shared/available-for-hire/available-for-hire.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AppRoutingModule} from "./app-routing.module";
-import {NgOptimizedImage} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {GlobalService} from "../services/global-service";
 import {ScrollService} from "../services/scroll-service";
 import {FooterDescriptionComponent} from './components/footer/footer-description/footer-description.component';
 import {FooterGroupComponent} from './components/footer/footer-group/footer-group.component';
 import {FooterLinkComponent} from './components/footer/footer-link/footer-link.component';
-import {HeaderImageComponent} from './contents/page-index/header/header-image/header-image.component';
+import {HeaderImageComponent} from './contents/index/header/header-image/header-image.component';
 import {
     HeaderImageAnimatedComponent
-} from './contents/page-index/header/header-image-animated/header-image-animated.component';
-import {PageNotFoundComponent} from './components/pages/page-not-found/page-not-found.component';
-import {HeaderTechStackComponent} from './contents/page-index/header/header-tech-stack/header-tech-stack.component';
-import {MarkdownComponent, SafeHtmlPipe} from './components/markdown/markdown.component';
+} from './contents/index/header/header-image-animated/header-image-animated.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {HeaderTechStackComponent} from './contents/index/header/header-tech-stack/header-tech-stack.component';
+import {MarkdownComponent} from './components/markdown/markdown.component';
 import {HttpClientModule} from "@angular/common/http";
 import {TableOfContentsComponent} from './components/table-of-contents/table-of-contents.component';
 import {
     TableOfContentsLinkComponent
 } from './components/table-of-contents/table-of-contents-link/table-of-contents-link.component';
 import {IsVisibleDirective} from "./utils/directives/visible-directive";
-import { FeaturedCardComponent } from './contents/page-index/header/featured-card/featured-card.component';
-import { HeaderQuoteComponent } from './contents/page-index/header/header-quote/header-quote.component';
+import { FeaturedCardComponent } from './contents/index/header/featured-card/featured-card.component';
+import { HeaderQuoteComponent } from './contents/index/header/header-quote/header-quote.component';
 import {AutoTypeDirective} from "./utils/directives/auto-type.directive";
+import {MarkdownDirective} from './utils/directives/markdown.directive';
+import {SafeHtmlPipe} from "./utils/pipes/safe-html-pipe";
+import { ProjectsComponent } from './contents/projects/projects.component';
+import { BlogComponent } from './contents/blog/blog.component';
+import { TodayILearnedComponent } from './contents/today-i-learned/today-i-learned.component';
+import { SectionTitleComponent } from './components/sections/section-title/section-title.component';
+import { SectionContentComponent } from './components/sections/section-content/section-content.component';
+import { SectionButtonComponent } from './components/sections/section-button/section-button.component';
+import { AppWindowComponent } from './components/shared/app-window/app-window.component';
+import { BrowserTabComponent } from './components/shared/browser-tab/browser-tab.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { GithubWireframeComponent } from './components/wireframes/github-wireframe/github-wireframe.component';
+import { SkeletonsComponent } from './components/wireframes/skeletons/skeletons.component';
+import { PageUnderConstructionComponent } from './components/page-under-construction/page-under-construction.component';
 
 
 @NgModule({
@@ -87,18 +101,33 @@ import {AutoTypeDirective} from "./utils/directives/auto-type.directive";
         FeaturedCardComponent,
         PageIndexComponent,
         HeaderQuoteComponent,
-        AutoTypeDirective
+        AutoTypeDirective,
+        MarkdownDirective,
+        ProjectsComponent,
+        BlogComponent,
+        TodayILearnedComponent,
+        SectionTitleComponent,
+        SectionContentComponent,
+        SectionButtonComponent,
+        AppWindowComponent,
+        BrowserTabComponent,
+        PageHeaderComponent,
+        GithubWireframeComponent,
+        SkeletonsComponent,
+        PageUnderConstructionComponent,
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         NgOptimizedImage,
-        HttpClientModule
+        HttpClientModule,
+        CommonModule
     ],
     providers: [
         GlobalService,
         ScrollService,
+        SafeHtmlPipe,
     ],
     bootstrap: [AppComponent],
 })

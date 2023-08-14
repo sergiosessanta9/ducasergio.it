@@ -1,0 +1,90 @@
+<div class="h-full w-full bg-white p-4 text-sm text-slate-600 dark:bg-slate-900 dark:text-slate-400">
+    <div class="flex items-center gap-1">
+        <div class="mr-1">
+            <skeleton />
+        </div>
+        <ng-container *ngIf="author; else skeletonAuthor">
+            <div class="-mt-0.5 text-accent-700 dark:text-accent-500">{{ author }}</div>
+        </ng-container>
+        <ng-template #skeletonAuthor>
+            <skeleton [width]="64"/>
+        </ng-template>
+        <div class="-mt-0.5">/</div>
+        <div class="-mt-0.5 font-bold text-accent-700 dark:font-semibold dark:text-accent-500">{{ repository }}</div>
+        <div class="border-divider-light ml-1 rounded-full border px-2 py-0.5 text-xs dark:border-divider-dark">
+            public
+        </div>
+    </div>
+    <div class="mt-2">
+        <p>{{ description }}</p>
+    </div>
+    <div class="mt-6 flex flex-col gap-3">
+        <div class="flex items-center gap-2">
+            <skeleton/>
+            <ng-container *ngIf="license; else skeletonLicense">
+                <div>
+                    <p>{{ license }} license</p>
+                </div>
+            </ng-container>
+            <ng-template #skeletonLicense>
+                <skeleton [width]="64"/>
+            </ng-template>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="flex items-center gap-1">
+                <skeleton/>
+                <skeleton [width]="48"/>
+            </div>
+            <div class="flex items-center gap-1">
+                <skeleton/>
+                <skeleton [width]="56"/>
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 flex gap-2">
+        <div class="border-divider-light flex h-8 flex-1 items-center justify-center rounded-lg border dark:border-divider-dark">
+            <div class="flex items-center gap-1">
+                <skeleton/>
+                <skeleton [width]="48"/>
+            </div>
+        </div>
+        <div class="border-divider-light flex h-8 flex-1 items-center justify-center rounded-lg border dark:border-divider-dark">
+            <div class="flex items-center gap-1">
+                <skeleton/>
+                <skeleton [width]="64"/>
+            </div>
+        </div>
+    </div>
+    <div class="border-divider-light mt-4 flex border-b dark:border-divider-dark">
+        <div class="-mb-[2px] flex h-12">
+            <div class="flex items-center gap-1 border-b-[3px] border-amber-400 px-6 dark:border-amber-900">
+                <skeleton/>
+                <skeleton [width]="32"/>
+            </div>
+        </div>
+        <div class="-mb-[2px] flex h-12">
+            <div class="flex items-center gap-1 border-b-[3px] border-transparent px-6">
+                <skeleton/>
+                <skeleton [width]="40"/>
+            </div>
+        </div>
+        <div class="-mb-[2px] flex h-12">
+            <div class="flex items-center gap-1 border-b-[3px] border-transparent px-6">
+                <skeleton/>
+                <skeleton [width]="80"/>
+            </div>
+        </div>
+        <div class="-mb-[2px] flex h-12">
+            <div class="flex items-center gap-1 border-b-[3px] border-transparent px-6">
+                <skeleton/>
+                <skeleton [width]="48"/>
+            </div>
+        </div>
+        <div class="-mb-[2px] flex h-12">
+            <div class="flex items-center gap-1 border-b-[3px] border-transparent px-6">
+                <skeleton/>
+                <skeleton [width]="40"/>
+            </div>
+        </div>
+    </div>
+</div>
