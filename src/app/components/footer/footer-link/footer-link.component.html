@@ -7,7 +7,7 @@
 
 <div *ngIf="link?.label != 'soon' && link?.isInternal" class="footer-link" >
   <nav-link [href]="link?.href!" [title]="link?.title!"/>
-  <span *ngIf="link?.label" class="footer-link__label">{{link?.label}}</span>
+  <span *ngIf="link?.label" class="footer-link__label border-divider-light dark:border-divider-dark">{{link?.label}}</span>
 </div>
 
 <a

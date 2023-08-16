@@ -36,6 +36,10 @@
           },
           "configurations": {
             "production": {
+              "index": {
+                "input": "src/index.html",
+                "output": "index.html"
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -51,12 +55,17 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
+              "index": {
+                "input": "./src/index.test.html",
+                "output": "index.html"
+              },
+              "buildOptimizer": true,
+              "optimization": true,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"

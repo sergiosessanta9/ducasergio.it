@@ -22,8 +22,8 @@ export class FooterComponent {
     ]),
     new FooterGroup('Learn', [
       new FooterLink('Docs','/docs'),
-      new FooterLink('Personal Blog','/blog'),
-      new FooterLink('T.I.L','/today-i-learned', 'new'),
+      new FooterLink('Personal Blog','/blog', 'soon'),
+      new FooterLink('T.I.L','/today-i-learned', 'soon'),
     ]),
     new FooterGroup('This Site', [
       new FooterLink('Design Inspiration','https://github.com/enjidev/enji.dev', null, false),

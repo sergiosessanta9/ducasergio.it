@@ -61,6 +61,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { GithubWireframeComponent } from './components/wireframes/github-wireframe/github-wireframe.component';
 import { SkeletonsComponent } from './components/wireframes/skeletons/skeletons.component';
 import { PageUnderConstructionComponent } from './components/page-under-construction/page-under-construction.component';
+import {BaseUrlService} from "../services/base-url-service";
 
 
 @NgModule({
@@ -128,6 +129,7 @@ import { PageUnderConstructionComponent } from './components/page-under-construc
         GlobalService,
         ScrollService,
         SafeHtmlPipe,
+        BaseUrlService
     ],
     bootstrap: [AppComponent],
 })
