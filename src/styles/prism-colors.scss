@@ -19,6 +19,13 @@
     --prism-color-comment: var(--prism-color-base-secondary);
     --prism-color-property: var(--prism-color-base-primary);
     --prism-color-punctuation: var(--prism-color-base-secondary);
+
+    /* Additional styles for Java */
+    --prism-color-java-keyword: theme(colors.red.700); /* Reusing red for keywords */
+    --prism-color-java-annotation: theme(colors.orange.700); /* Orange for annotations like @Override */
+    --prism-color-java-method: theme(colors.yellow.700); /* Purple for method names */
+    --prism-color-java-class: theme(colors.blue.700); /* Blue for class names */
+    --prism-color-java-punctuation: theme(colors.blue.700); /* Blue for class names */
 }
 
 .dark {
@@ -42,6 +49,8 @@
     --prism-color-comment: var(--prism-color-base-secondary);
     --prism-color-property: var(--prism-color-base-primary);
     --prism-color-punctuation: var(--prism-color-base-secondary);
+
+    --prism-color-java-method: theme(colors.yellow.500); /* Purple for method names */
 }
 
 /**
@@ -97,6 +106,21 @@ pre > code,
         &.keyword {
             @apply text-[var(--prism-color-keyword)];
         }
+
+        
+    }
+}
+
+code[class*="language-java"] {
+    .token {
+
+        &.function {
+            @apply text-[var(--prism-color-java-method)];
+        }
+
+        &.class-name{
+            @apply text-[var(--prism-color-base-primary)];
+        }
     }
 }
 
@@ -118,6 +142,24 @@ pre > code,
 
     &.script {
         &.language-javascript {
+            @apply text-[var(--prism-color-base-primary)];
+        }
+    }
+}
+
+.language-java {
+    .code-line {
+        @apply text-[var(--prism-color-property-access)];
+    }
+
+    .token {
+        .property-access {
+            @apply text-[var(--prism-color-string)];
+        }
+    }
+
+    &.script {
+        &.language-java {
             @apply text-[var(--prism-color-base-primary)];
         }
     }

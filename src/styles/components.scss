@@ -208,9 +208,9 @@
   .pinned {
     @apply content-[''] h-[400px] w-[160px] bg-slate-200 dark:bg-slate-800 rotate-[-30deg] top-[-100px];
     left: -300px;
-    -webkit-animation: slide 1.4s ease-in-out;
+    -webkit-animation: slide 1s ease-in;
     -webkit-animation-delay: 2s;
-    animation: slide 1.4s ease-in-out;
+    animation: slide 1s ease-in;
     animation-delay: 2s;
   }
 
@@ -219,7 +219,7 @@
     0% { left: -300px; }
     50% { left: 50%; }
     */
-    100% { left: 1000px; }
+    100% { left: 100% }
   }
 
   @keyframes slide {
@@ -227,6 +227,6 @@
     0% { left: -300px; }
     50% { left: 50%; }
     */
-    100% { left: 1000px; }
+    100% { left: 100% }
   }
 }

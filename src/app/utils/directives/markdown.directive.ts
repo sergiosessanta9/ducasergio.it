@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import * as marked from 'marked';
 import * as yaml from 'js-yaml';
 import * as Prism from 'prismjs';
+import 'prismjs/components/prism-java';
 import * as jschardet from 'jschardet';
 import { TTableOfContentsItem } from "../../components/table-of-contents/models/t-table-of-contents-item";
 import { SafeHtmlPipe } from "../pipes/safe-html-pipe";
@@ -107,7 +108,7 @@ export class MarkdownDirective implements OnInit {
 
   private err(error: any) {
     this.error = `Error fetching text file: ${error}`;
-    console.log(this.error);
+    //console.log(this.error);
     this.onLoad.emit(null);
   }
 
@@ -143,7 +144,6 @@ export class MarkdownDirective implements OnInit {
     };
 
     renderer.image = function(href: string, title: string, text: string) {
-      console.log(text);
       return `<div class="relative">
                 <div class="absolute -inset-8 z-[-1] rounded-[20%] bg-[length:180%_180%] bg-center opacity-25 blur-2xl hidden dark:block" style="background-image: url(&quot;${href}&quot;);"></div>
                 <img class="mt-4 md:mt-0" src="${href}" alt="${text}">
@@ -170,7 +170,17 @@ export class MarkdownDirective implements OnInit {
       // Custom rendering of code blocks
       //console.log(language);
       const split = language.split("::");
-      const options = split.length > 0 ? JSON.parse(language.split("::")[1]) as MDCodeOptionVO : new MDCodeOptionVO();
+      let options;
+      if (split.length > 1) {
+          try {
+              options = JSON.parse(split[1]);
+          } catch (e) {
+              console.error('Failed to parse options', e);
+              options = new MDCodeOptionVO();
+          }
+      } else {
+          options = new MDCodeOptionVO();
+      }
       language = split[0];
       let lines = 0;
 

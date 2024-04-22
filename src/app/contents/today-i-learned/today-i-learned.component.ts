@@ -39,14 +39,12 @@ export class TodayILearnedComponent implements OnInit {
     document.documentElement.classList.add(theme);
     this.api.getTILs().subscribe(
       (data: TodayILearnedVO[]) => {
-        console.log(data);
         if (data) {
 
           this.articles = data;
         }
       },
       (error) => {
-        console.log(error);
         this.error = true;
       }
     );
@@ -69,8 +67,6 @@ export class TodayILearnedComponent implements OnInit {
   onLoad(data: any) {
     if (data){
       this.data = data;
-
-      console.log(data);
 
       this.loaded = true;
 

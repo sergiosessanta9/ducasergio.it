@@ -4,6 +4,7 @@ import { ApiService } from 'src/services/api-service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { GlobalService } from 'src/services/global-service';
 import { BlogArticleVO } from 'src/app/models/blog-article-vo';
+import { Icons } from 'src/app/components/shared/icons';
 
 @Component({
   selector: 'blog',
@@ -26,10 +27,13 @@ export class BlogComponent implements OnInit {
 
   }
 
+  protected readonly Icons = Icons;
+  
   animationState = 'initial';
   articles: BlogVO[] = [];
   hasError = false;
   isEmpty = false;
+  isHover = false;
 
 
   ngOnInit(): void {

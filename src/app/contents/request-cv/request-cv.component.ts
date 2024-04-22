@@ -59,7 +59,6 @@ export class RequestCvComponent {
   }
 
   showSuccess() {
-    console.log('SHOW');
     this.alertService.showAlert({
       title: 'Request Sent 🎉',
       message: 'Your request for my CV has been sent successfully. I\'ve sent you an email with the details, but if you don\'t see it, be sure to check your spam folder—it might be hiding there!',
@@ -68,7 +67,6 @@ export class RequestCvComponent {
   }
 
   showNegative() {
-    console.log('SHOW');
     this.alertService.showAlert({
       title: 'Oops 😕',
       message: 'It looks like we\'re unable to send the email with my CV at the moment. This might be a temporary issue. Please try again later, or contact me directly if the problem continues. Thanks for your patience!',

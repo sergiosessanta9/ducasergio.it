@@ -17,7 +17,6 @@ export class AlertService {
 
   showAlert(alert: Alert): void {
     this.clearAlert();
-    console.log('Alert received:', alert);
     // Invio il nuovo alert dopo un breve delay per assicurarsi che il vecchio alert sia stato rimosso
     this.clearAlertSubject.pipe(debounceTime(10)).subscribe(() => {
       this.alertSubject.next(alert);
