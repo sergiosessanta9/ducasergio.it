@@ -1,0 +1,39 @@
+header {
+  * {
+    @apply text-slate-600;
+  }
+
+  h1 {
+    @apply text-[2.5rem] font-extrabold leading-tight text-slate-700 md:text-7xl md:leading-snug dark:text-slate-300;
+    transform: translateX(-32px);
+    opacity: 0;
+    animation: slide-in 0.5s 0.2s forwards ease;
+  }
+
+  p {
+    @apply mt-4 text-lg text-slate-600 md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px] dark:text-slate-400;
+    transform: translateX(-32px);
+    opacity: 0;
+    animation: slide-in 0.5s forwards ease-in;
+  }
+
+  span {
+    @apply text-accent-600 mb-1 block text-lg font-extrabold capitalize leading-none md:mb-0 md:text-2xl dark:text-accent-400;
+    transform: translateX(-32px);
+    opacity: 0;
+    animation: slide-in 0.5s 0.1s forwards ease;
+  }
+}
+
+@keyframes slide-in {
+
+  50% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

@@ -1,0 +1,52 @@
+<page-header class="pointer-events-none select-none" [title]="'Projects'"
+    description="Short notes on front-end related topics.">
+    <ng-template>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 631 620" fill="none" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="stroke-accent-500 -mt-20 h-full opacity-60 dark:opacity-40">
+            <rect x="254.558" y="1.41421" width="122" height="358" rx="61" transform="rotate(45 254.558 1.41421)"
+                [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10" stroke-dasharray="10"></rect>
+            <rect x="341.105" y="421.087" width="122" height="358" rx="61" transform="rotate(135 341.105 421.087)"
+                [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10" stroke-dasharray="10"></rect>
+            <rect y="1.41421" width="122" height="358" rx="61"
+                [@drawLine]="animationState" transform="matrix(-0.707107 0.707107 0.707107 0.707107 374.96 111.414)" pathLength="1"
+                stroke-dashoffset="10" stroke-dasharray="10"></rect>
+            <rect x="1.41421" y="-1.19209e-07" width="122" height="358" rx="61"
+                [@drawLine]="animationState" transform="matrix(0.707107 0.707107 0.707107 -0.707107 288.414 531.087)" pathLength="1"
+                stroke-dashoffset="10" stroke-dasharray="10"></rect>
+        </svg>
+    </ng-template>
+</page-header>
+<section-title data-accent="violet" [title]="'Personal Website'" caption="my personal portfolio"
+    description="My personal project for my website to describe myself and my skills"
+    [button]="{title: 'learn more', href : 'https://github.com/sergiosessanta9/ducasergio.it'}">
+</section-title>
+<app-section-content>
+    <div class="flex lg:gap-12">
+        <div class="hidden flex-1 flex-col gap-3 pt-8 lg:flex" data-accent="violet">
+            <div class="flex flex-col gap-3">
+                <app-section-button title="Available on GitHub" [icon]="Icons.GitHub"
+                    description="Access powerful and flexible project on GitHub with MIT license."
+                    [active]="currentState === 'github'" (clickEvent)="setCurrentState('github')"></app-section-button>
+                <app-section-button title="npm package" [icon]="Icons.Npm"
+                    description="Install and use the package with ease thanks to its typed options."
+                    [active]="currentState === 'npm'" (clickEvent)="setCurrentState('npm')"></app-section-button>
+            </div>
+        </div>
+        <div class="w-full lg:w-auto">
+            <div class="-mt-[41px]">
+                <div class="w-full lg:h-[400px] lg:w-[600px]">
+                    <app-app-window type="browser" [browserTabs]="browserTabs">
+                        <ng-container *ngIf="currentState == 'github'">
+                            <github-wireframe author="sergiosessanta9" license="MIT" repository="ducasergio.it"
+                                description="Personal, modern and clean portfolio inspired by enji.dev but made in Angular.." />
+                        </ng-container>
+                        <ng-container *ngIf="currentState === 'npm'">
+                            GINO
+                        </ng-container>
+                    </app-app-window>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-section-content>

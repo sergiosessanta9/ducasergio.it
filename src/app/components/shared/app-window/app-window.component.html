@@ -1,0 +1,36 @@
+<div role="presentation"
+     class="border-divider-light pointer-events-none flex h-full w-full select-none flex-col overflow-hidden rounded-xl border bg-white dark:border-divider-dark dark:bg-[#0c1222]">
+
+    <div class="border-divider-light relative box-border border-b dark:border-divider-dark"
+         [ngClass]="{ 'h-20': isWithBrowserTabs, 'h-10': !isWithBrowserTabs }">
+        <div class="absolute left-4 top-0 flex h-10 items-center gap-1.5">
+            <div class="h-3 w-3 rounded-full bg-red-300 dark:bg-slate-500"></div>
+            <div class="h-3 w-3 rounded-full bg-amber-300 dark:bg-slate-500"></div>
+            <div class="h-3 w-3 rounded-full bg-green-300 dark:bg-slate-500"></div>
+        </div>
+        <ng-container *ngIf="type == 'browser'">
+            <div class="flex h-10 items-center justify-center">
+                <skeleton [width]="160"/>
+            </div>
+            <div class="mt-2 flex gap-2 px-3" *ngIf="isWithBrowserTabs()">
+                <div
+                    *ngFor="let tab of browserTabs"
+                    class="flex h-6 items-center truncate rounded-lg"
+                    [ngClass]="{
+                        'bg-slate-200 text-slate-600 dark:bg-slate-100/20 dark:text-slate-300':
+                        tab.isActive,
+                        'bg-slate-200/50 text-slate-500 dark:bg-slate-100/5': !tab.isActive
+                    }"
+                    [style.width.px]="200">
+                <div class="flex w-full gap-2 px-2 text-xs">
+                    <svg-icon [icon]="tab.icon" className="h-4 w-4"/>
+                    <div class="flex-1 truncate">{{ tab.title }}</div>
+                </div>
+            </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="flex-1 overflow-hidden">
+        <ng-content></ng-content>
+    </div>
+</div>

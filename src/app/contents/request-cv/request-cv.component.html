@@ -1,0 +1,66 @@
+<page-header class="pointer-events-none select-none" [title]="'Request CV'" description="Request Form" />
+<section-title data-accent="violet" [title]="'Disclaimer'" caption="one thing you should know"
+    description="Interested in getting a peek at my resume? Please fill out the form below. Due to personal details like my home address and phone number included in my CV, I prefer to handle its distribution personally via email to keep the information secure. Once I receive your request, I'll shoot my CV over to you as soon as possible."
+    [button]="{title: 'compile form', href : '/request-cv#cv-form'}">
+</section-title>
+<app-section-content data-accent="violet">
+    <form id="cv-form" name="cv-form" class="w-full max-w-lg pt-16" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-slate-700 dark:text-slate-300 text-xs font-bold mb-2"
+                    for="grid-first-first_name"> First Name
+                </label>
+                <input name="first_name"
+                    class="appearance-none block w-full bg-white dark:bg-[#161e31] text-slate-700 dark:text-slate-300 border border-divider-light dark:border-divider-dark rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-[#161e31]"
+                    id="grid-first-first_name" type="text" placeholder="Chandler" formControlName="first_name">
+                <div
+                    *ngIf="signUpForm.controls['first_name'].invalid && (signUpForm.controls['first_name'].dirty || signUpForm.controls['first_name'].touched)">
+                    <div *ngIf="signUpForm.controls['first_name'].errors?.['required']">
+                        <p class="text-red-500 dark:text-red-400 text-xs italic mb-4">First Name is required.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-slate-700 dark:text-slate-300 text-xs font-bold mb-2"
+                    for="grid-first-last_name">
+                    Last Name
+                </label>
+                <input name="last_name"
+                    class="appearance-none block w-full bg-white dark:bg-[#161e31] text-slate-700 dark:text-slate-300 border border-divider-light dark:border-divider-dark rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-[#161e31]"
+                    id="grid-first-name" type="text" placeholder="Bing" formControlName="last_name">
+                <!--border-red-500-->
+                <div
+                    *ngIf="signUpForm.controls['last_name'].invalid && (signUpForm.controls['last_name'].dirty || signUpForm.controls['last_name'].touched)">
+                    <div *ngIf="signUpForm.controls['last_name'].errors?.['required']">
+                        <p class="text-red-500 dark:text-red-400 text-xs italic mb-4">Last Name is required.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="w-full felx flex-wrap px-3 md:mt-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-slate-700 dark:text-slate-300 text-xs font-bold mb-2"
+                    for="grid-last-email">
+                    Email
+                </label>
+                <input name="email"
+                    class="appearance-none block w-full bg-white dark:bg-[#161e31] text-slate-700 dark:text-slate-300 border border-divider-light dark:border-divider-dark rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-[#161e31]"
+                    id="grid-last-email" type="email" placeholder="chandler.bing@email.com" formControlName="email">
+                <div
+                    *ngIf="signUpForm.controls['email'].invalid && (signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched)">
+                    <div *ngIf="signUpForm.controls['email'].errors?.['required']">
+                        <p class="text-red-500 dark:text-red-400 text-xs italic mb-4">Email is required.</p>
+                    </div>
+                    <div *ngIf="signUpForm.controls['email'].errors?.['email']">
+                        <p class="text-red-500 dark:text-red-400 text-xs italic mb-4">Invalid Email.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit"
+            class="button bg-accent-700 hover:bg-accent-800 button--solid min-w-[128px] md:button--big cursor-pointer mt-6">Send
+            Request</button>
+    </form>
+</app-section-content>

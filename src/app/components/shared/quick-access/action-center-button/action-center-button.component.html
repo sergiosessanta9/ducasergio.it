@@ -1,0 +1,38 @@
+<button type="button" (click)="toggle()" [ngClass]="
+    {
+      'relative flex flex-1 flex-col justify-between overflow-hidden rounded-xl p-4 transition-colors dark:bg-slate-700 bg-white/50': true,
+      'bg-white/80 dark:bg-slate-700/80': active,
+      'bg-white/40 dark:bg-slate-700/40': !active
+    }">
+
+    <div *ngIf="icons && icons.length<2; else multipleIcons">
+        <svg-icon [icon]="icons.at(0)"/>
+    </div>
+    <ng-template #multipleIcons>
+      <div class="relative">
+          <svg-icon class="absolute top-0"
+                    [@iconAnimation]="active ? 'show' : 'hide'"
+                    (@iconAnimation.start)="animationComplete = false"
+                    (@iconAnimation.done)="animationComplete = true"
+                    [icon]="icons.at(0)"/>
+          <svg-icon class="absolute top-0"
+                    [@iconAnimation]="active ? 'hide' : 'show'"
+                    (@iconAnimation.start)="animationComplete = false"
+                    (@iconAnimation.done)="animationComplete = true"
+                    [icon]="icons.at(1)"/>
+      </div>
+      <!--
+        <div *ngIf="active; else notActive">
+            <svg-icon [icon]="icons!.at(0)"/>
+        </div>
+        <ng-template #notActive>
+            <svg-icon [icon]="icons!.at(1)"/>
+        </ng-template>
+        -->
+    </ng-template>
+
+    <div class="text-left text-[13px] font-medium dark:font-normal">
+        {{text}}
+    </div>
+
+</button>

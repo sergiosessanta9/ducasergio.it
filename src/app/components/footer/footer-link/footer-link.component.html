@@ -1,0 +1,22 @@
+<div *ngIf="link?.label == 'soon'">
+  <span class="footer-link footer-link--soon">
+  {{link?.title}}
+    <span class="footer-link__label">{{link?.label}}</span>
+  </span>
+</div>
+
+<div *ngIf="link?.label != 'soon' && link?.isInternal" class="footer-link" >
+  <nav-link [href]="link?.href!" [title]="link?.title!"/>
+  <span *ngIf="link?.label" class="footer-link__label border-divider-light dark:border-divider-dark">{{link?.label}}</span>
+</div>
+
+<a
+  *ngIf="link?.label != 'soon' && !link?.isInternal"
+  [href]="link?.href"
+  [target]="link?.isBlank ? '_blank' : ''"
+  rel="noreferrer nofollow"
+  class="footer-link">
+  {{link?.title}}
+  <svg-icon [icon]="Icons.ExternalLink" className="h-3.5 w-3.5"/>
+  <span *ngIf="this.link?.label != null" class="footer-link__label">{{link?.label}}</span>
+</a>

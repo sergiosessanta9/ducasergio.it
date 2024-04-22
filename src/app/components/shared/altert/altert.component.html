@@ -1,0 +1,26 @@
+<div *ngIf="alert" @fade class="fixed z-[1002] bottom-4 right-4 left-4 sm:left-[unset] pointer-none insets-0">
+  <div
+    class="border-divider-light flex w-full gap-2 rounded-xl border bg-white/60 p-4 text-[13px] backdrop-blur sm:max-w-[400px] dark:border-divider-dark dark:bg-slate-900/60"
+    style="opacity: 1; transform: none;">
+    <div
+      [ngClass]="{'text-green-600 dark:text-green-400': alert.type=='success', 'text-red-600 dark:text-red-400': alert.type=='error', }">
+      <svg-icon *ngIf="alert.type=='success'" [icon]="Icons.CheckIcon" className="h-5 w-5" />
+      <svg-icon *ngIf="alert.type=='error'" [icon]="Icons.ErrorIcon" className="h-5 w-5" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <div
+        [ngClass]="{'text-green-600 dark:text-green-400': alert.type=='success', 'text-red-600 dark:text-red-400': alert.type=='error', 'font-bold': true }">
+        {{alert.title}}</div>
+      <div class="text-slate-600 dark:text-slate-400">
+        <p>{{alert.message}}</p>
+      </div>
+    </div>
+    <div class=""><button type="button" class="flex items-center justify-center rounded-lg"
+        data-dismiss-target="#toast-danger" aria-label="Close" (click)="closeAlert()"><svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+          <path fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+            clip-rule="evenodd"></path>
+        </svg></button></div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+<div *ngIf="article">
+    <div class="mx-auto max-w-[360px] px-4 sm:max-w-[420px] sm:px-0">
+        <div class="border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border p-4  dark:border-divider-dark"
+            style="opacity: 1; pointer-events: auto; transform: none;">
+            <div class="absolute inset-0 rounded-xl bg-white/70 backdrop-blur dark:bg-slate-900/80"></div>
+            <div class="flex items-center gap-4">
+                <div *ngFor="let icon of article.reactions; index as i" class="flex flex-col items-center gap-2">
+                    <button [title]="icon.title" [attr.aria-label]="icon.title"
+                        class="relative select-none"
+                        [ngClass]="{'cursor-not-allowed': icon.easterEgg, 'cursor-pointer': !icon.easterEgg}"
+                        (mouseover)="icon.hover=true" (mouseout)="icon.hover=false"
+                        (click)="animateElement(icon, i, $event)">
+                        <div class="h-10 w-10" style="transform: none;">
+                            <img [alt]="icon.title" [src]="icon.easterEgg ? ('data:image/jpeg;base64,' + icon.easteregg_icon) : (icon.hover ? ('data:image/jpeg;base64,' + icon.animated_icon) : ('data:image/jpeg;base64,' + icon.normal_icon))" width="48"
+                                class="pointer-events-none h-full w-full absolute z-0"
+                                [ngClass]="{'scale-[1.2]': icon.hover, 'transform translate-z-0': icon.hover}"
+                                height="48" decoding="async" data-nimg="1"
+                                style="color: transparent;">
+                                <!--
+                            <div *ngIf="animations[i].animate" [@animateEmoji]="{value: animations[i].animate?':enter' : ':leave', params: { x: trnaistionX}}" (@animateEmoji.done)="resetAnimation(i)" 
+                                class="pointer-events-none absolute h-10 w-10 select-none opacity-1">
+                                <img alt="Claps" [src]="'data:image/jpeg;base64,' + icon.animated_icon" width="48" height="48" decoding="async" data-nimg="1" class="h-full w-full absolute" style="color: transparent;">
+                            </div>
+                            -->
+                        </div>
+                    </button>
+                    <div class="relative flex h-6 items-center gap-1 overflow-hidden rounded-full bg-slate-200 py-1 px-2 dark:bg-[#1d263a]">
+                        <span class="flex flex-col font-mono text-sm font-bold text-slate-600 dark:text-slate-300"style="transform: none;">
+                            <span class="flex h-5 items-center">&nbsp;</span>
+                            <span class="flex h-5 items-center">{{icon.amount}}</span>
+                            <span class="flex h-5 items-center">{{icon.amount}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <div class="flex flex-col items-center gap-2">
+                    <div data-headlessui-state="">
+                        <button title="Insight" aria-label="Insight" (click)="insightOpen=!insightOpen; shareOpen=false"
+                            class="relative z-10 flex h-10 w-10 items-center justify-center rounded-full hover:bg-slate-200 hover:dark:bg-[#1d263a]"
+                            type="button" aria-expanded="false" data-headlessui-state=""
+                            id="headlessui-popover-button-:r0:"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="currentColor" fill="none" class="h-5 w-5">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </button>
+                        <div *ngIf="insightOpen" @showIn class="border-divider-light absolute inset-x-2 bottom-24 z-[902] flex flex-col overflow-hidden rounded-2xl border bg-white/70 pb-2 pt-1 backdrop-blur dark:border-divider-dark dark:bg-slate-900/80"
+                            tabindex="-1" data-headlessui-state="open" style="opacity: 1; transform: none;"
+                            id="headlessui-popover-panel-:r1u:">
+                            <div class="py-3 px-4 text-center text-[13px] text-lg font-bold">Insight</div>
+                            <div class="flex justify-evenly py-2 text-sm">
+                                <div class="flex flex-col items-center gap-1">
+                                    <div>Views</div>
+                                    <div class="font-medium text-xl">{{article.views ?? 0}}</div>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <div>Shares</div>
+                                    <div class="font-medium text-xl">{{article.shares ?? 0}}</div>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <div>Reactions</div>
+                                    <div class="font-medium text-xl">{{article.reaction_count ?? 0}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <button title="Share" aria-label="Share" (click)="shareOpen=!shareOpen; insightOpen=false"
+                        class="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 dark:bg-[#1d263a]"
+                        id="headlessui-menu-button-:r2:" type="button" aria-haspopup="menu" aria-expanded="false"
+                        data-headlessui-state=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="h-5 w-5">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                            <polyline points="16 6 12 2 8 6"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="15"></line>
+                        </svg>
+                    </button>
+                    <div *ngIf="shareOpen" @showIn
+                        class="border-divider-light absolute bottom-24 right-2 z-[902] flex w-56 flex-col overflow-hidden rounded-2xl border bg-white/70 pb-2 pt-1 backdrop-blur dark:border-divider-dark dark:bg-slate-900/80"
+                        aria-labelledby="headlessui-menu-button-:rs:" id="headlessui-menu-items-:r16:" role="menu"
+                        tabindex="0" data-headlessui-state="open" style="opacity: 1; transform: none;">
+                        <div class="py-3 px-4 text-center text-[13px] text-lg font-bold" role="none">Share this on</div>
+                        <a [href]="twitterLink+currentUrl" type="button" (click)="shareBlog(twitterLink+currentUrl)"
+                            target="_blank" rel="noreferrer nofollow"
+                            class="flex w-full items-center gap-3 px-4 py-2 text-[13px] hover:bg-slate-100 hover:dark:bg-[#1d263a]"
+                            role="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"
+                                fill="currentColor" class="h-4 w-4">
+                                <title role="none">X / Twitter Icon</title>
+                                <path
+                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                                    role="none"></path>
+                            </svg>
+                            <span class="flex items-center gap-2" role="none">Twitter
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="h-3 w-3" role="none">
+                                    <path fill-rule="evenodd"
+                                        d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                                        clip-rule="evenodd" role="none"></path>
+                                    <path fill-rule="evenodd"
+                                        d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                                        clip-rule="evenodd" role="none"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a *ngIf="whatsappEnabled" [href]="'whatsapp://send?text='+currentUrl" type="button" (click)="shareBlog('whatsapp://send?text='+currentUrl)"
+                            data-action="share/whatsapp/share"
+                            rel="noreferrer nofollow"
+                            class="flex w-full items-center gap-3 px-4 py-2 text-[13px] hover:bg-slate-100 hover:dark:bg-[#1d263a]"
+                            role="none">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" fill="currentColor" class="h-4 w-4">
+                                <title role="none">Whatsapp</title>
+                                <path d="M 12.011719 2 C 6.5057187 2 2.0234844 6.478375 2.0214844 11.984375 C 2.0204844 13.744375 2.4814687 15.462563 3.3554688 16.976562 L 2 22 L 7.2324219 20.763672 C 8.6914219 21.559672 10.333859 21.977516 12.005859 21.978516 L 12.009766 21.978516 C 17.514766 21.978516 21.995047 17.499141 21.998047 11.994141 C 22.000047 9.3251406 20.962172 6.8157344 19.076172 4.9277344 C 17.190172 3.0407344 14.683719 2.001 12.011719 2 z M 12.009766 4 C 14.145766 4.001 16.153109 4.8337969 17.662109 6.3417969 C 19.171109 7.8517969 20.000047 9.8581875 19.998047 11.992188 C 19.996047 16.396187 16.413812 19.978516 12.007812 19.978516 C 10.674812 19.977516 9.3544062 19.642812 8.1914062 19.007812 L 7.5175781 18.640625 L 6.7734375 18.816406 L 4.8046875 19.28125 L 5.2851562 17.496094 L 5.5019531 16.695312 L 5.0878906 15.976562 C 4.3898906 14.768562 4.0204844 13.387375 4.0214844 11.984375 C 4.0234844 7.582375 7.6067656 4 12.009766 4 z M 8.4765625 7.375 C 8.3095625 7.375 8.0395469 7.4375 7.8105469 7.6875 C 7.5815469 7.9365 6.9355469 8.5395781 6.9355469 9.7675781 C 6.9355469 10.995578 7.8300781 12.182609 7.9550781 12.349609 C 8.0790781 12.515609 9.68175 15.115234 12.21875 16.115234 C 14.32675 16.946234 14.754891 16.782234 15.212891 16.740234 C 15.670891 16.699234 16.690438 16.137687 16.898438 15.554688 C 17.106437 14.971687 17.106922 14.470187 17.044922 14.367188 C 16.982922 14.263188 16.816406 14.201172 16.566406 14.076172 C 16.317406 13.951172 15.090328 13.348625 14.861328 13.265625 C 14.632328 13.182625 14.464828 13.140625 14.298828 13.390625 C 14.132828 13.640625 13.655766 14.201187 13.509766 14.367188 C 13.363766 14.534188 13.21875 14.556641 12.96875 14.431641 C 12.71875 14.305641 11.914938 14.041406 10.960938 13.191406 C 10.218937 12.530406 9.7182656 11.714844 9.5722656 11.464844 C 9.4272656 11.215844 9.5585938 11.079078 9.6835938 10.955078 C 9.7955938 10.843078 9.9316406 10.663578 10.056641 10.517578 C 10.180641 10.371578 10.223641 10.267562 10.306641 10.101562 C 10.389641 9.9355625 10.347156 9.7890625 10.285156 9.6640625 C 10.223156 9.5390625 9.737625 8.3065 9.515625 7.8125 C 9.328625 7.3975 9.131125 7.3878594 8.953125 7.3808594 C 8.808125 7.3748594 8.6425625 7.375 8.4765625 7.375 z"></path>
+                            </svg>
+                            <span class="flex items-center gap-2" role="none">Whatsapp
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="h-3 w-3" role="none">
+                                    <path fill-rule="evenodd"
+                                        d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                                        clip-rule="evenodd" role="none"></path>
+                                    <path fill-rule="evenodd"
+                                        d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                                        clip-rule="evenodd" role="none"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="border-divider-light my-2 border-t dark:border-divider-dark" role="none"></div>
+                        <button type="button" (click)="shareBlog(null)"
+                            class="flex w-full items-center gap-3 px-4 py-2 text-[13px] hover:bg-slate-100 hover:dark:bg-[#1d263a]"
+                            role="none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="h-4 w-4" role="none">
+                                <path fill-rule="evenodd"
+                                    d="M18.97 3.659a2.25 2.25 0 00-3.182 0l-10.94 10.94a3.75 3.75 0 105.304 5.303l7.693-7.693a.75.75 0 011.06 1.06l-7.693 7.693a5.25 5.25 0 11-7.424-7.424l10.939-10.94a3.75 3.75 0 115.303 5.304L9.097 18.835l-.008.008-.007.007-.002.002-.003.002A2.25 2.25 0 015.91 15.66l7.81-7.81a.75.75 0 011.061 1.06l-7.81 7.81a.75.75 0 001.054 1.068L18.97 6.84a2.25 2.25 0 000-3.182z"
+                                    clip-rule="evenodd" role="none"></path>
+                            </svg>Copy link</button>
+                    </div>
+                    <div
+                        class="relative flex h-6 items-center gap-1 overflow-hidden rounded-full bg-slate-200 py-1 px-2 dark:bg-[#1d263a]">
+                        <span class="flex flex-col font-mono text-sm font-bold text-slate-600 dark:text-slate-300"
+                            style="transform: none;"><span class="flex h-5 items-center">&nbsp;</span><span
+                                class="flex h-5 items-center">{{article.shares}}</span><span
+                                class="flex h-5 items-center">{{article.shares}}</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

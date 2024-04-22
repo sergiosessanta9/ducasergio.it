@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "font-mono";
+  src: url("./assets/fonts/PlusJakartaSans-ExtraBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "font-sans";
+  src: url("./assets/fonts/PlusJakartaSans-Regular.ttf") format('truetype');
+}
+
+@import 'tailwindcss/base';
+@import 'styles/base.scss';
+
+@import 'tailwindcss/components';
+@import 'styles/components.scss';
+@import 'styles/md-components.scss';
+@import 'styles/md-contents.scss';
+@import 'styles/prism-colors.scss';
+
+@import 'tailwindcss/utilities';
+
+.dark .dark\:border-divider-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240/var(--tw-border-opacity))
+}
+
+.dark .dark\:border-divider-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 41 59/var(--tw-border-opacity))
+}
+
+.border-divider-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 41 59/var(--tw-border-opacity))
+}
+
+.border-divider-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240/var(--tw-border-opacity))
+}
+

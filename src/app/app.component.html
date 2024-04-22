@@ -1,0 +1,13 @@
+<header>
+  <app-nav-bar/>
+</header>
+<quick-access/>
+<div class="{{global.isQuickAccessOpen ? 'overflow-hidden':''}} {{global.isQuickAccessOpen ? 'min-h-[100vh]':''}}">
+  <main class="flex-1" (scroll)="onScroll($event)">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<app-altert></app-altert>
+<app-footer class="mt-auto">Footer</app-footer>

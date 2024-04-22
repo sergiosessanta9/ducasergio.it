@@ -1,0 +1,37 @@
+<div id="__index">
+  <header id="page-header" class="background-grid background-grid--fade-out pt-36 pb-20 lg:pb-28 lg:pt-52 bord border-divider-light dark:border-divider-dark" data-accent="violet">
+    <div class="content-wrapper">
+      <div class="relative">
+        <div class="relative z-10">
+          <header-title/>
+        </div>
+        <div class="mt-6 md:mt-8">
+          <header-contact/>
+        </div>
+        <div class="mt-20 lg:mt-36">
+          <header-tech-stack/>
+        </div>
+        <div class="pointer-events-none absolute -top-36 right-0 z-0 hidden select-none lg:block">
+          <header-image/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex flex-col-reverse sm:flex-col">
+    <div class="relative mb-24 mt-20 sm:-mt-8 lg:-mt-16 lg:mb-24 md:block">
+      <div class="content-wrapper">
+        <div class="flex gap-4 flex-col sm:flex-wrap md:flex-row lg:gap-8">
+          <featured-card *ngFor="let item of items; let i = index"
+                         [style.animation-delay]="2.25+(i* 0.1)+'s'"
+                         class="border-divider-light  dark:border-divider-dark"
+                         [card]="item"/>
+        </div>
+      </div>
+    </div>
+
+    <header-quote/>
+
+  </div>
+
+</div>

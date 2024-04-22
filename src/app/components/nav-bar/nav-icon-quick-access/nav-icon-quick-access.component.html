@@ -1,0 +1,16 @@
+<button
+  type="button"
+  class="ml-1 flex h-9 w-9 items-center justify-center gap-2 rounded-xl
+  bg-slate-300/50 text-slate-800 xl:w-auto xl:px-3 hover:bg-slate-300/70
+  sm:ml-0 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50"
+  aria-label="Apri accesso rapido"
+  title="Apri accesso rapido"
+  (click)="openQuickAccess()">
+
+  <svg-icon [icon]="Icons.QuickAccessIcon" className="h-5 w-5"/>
+
+  <div class="hidden items-center gap-2 text-xs font-bold xl:flex dark:font-normal">
+    Quick Access
+    <app-kbd class="-mt-1">Q</app-kbd>
+  </div>
+</button>

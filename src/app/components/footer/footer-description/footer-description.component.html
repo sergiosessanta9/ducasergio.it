@@ -1,0 +1,14 @@
+<div class="max-w-[348px]">
+  <div class="mb-3 text-[13px] text-slate-600 dark:text-slate-400">
+    About Me
+  </div>
+  <p class="mb-4 font-normal leading-relaxed">
+    Hello! I'm Sergio, an enthusiastic <strong>full-stack developer</strong> with a passion for
+    technological innovation and crafting extraordinary solutions.
+  </p>
+  <ul class="-ml-2 flex gap-1">
+    <li *ngFor="let link of socialLinks" class="cursor-pointer">
+      <nav-icon-link [link]="link"/>
+    </li>
+  </ul>
+</div>

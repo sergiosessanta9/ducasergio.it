@@ -1,0 +1,35 @@
+<footer
+  class="background-grid background-grid--fade-in border-divider-light mt-24 pt-16 text-sm text-slate-900 dark:border-divider-dark dark:text-slate-200">
+  <div class="content-wrapper">
+    <div class="py-10 font-semibold">
+      <div class="flex flex-col-reverse gap-16 lg:flex-row">
+        <div class="flex-1">
+          <footer-description/>
+        </div>
+        <div class="-mx-2 flex flex-1 flex-col gap-8 sm:flex-row sm:gap-16 lg:mx-0">
+          <div class="flex sm:gap-16">
+            <footer-group class="flex-1" [group]="groups[0]"/>
+            <footer-group class="flex-1" [group]="groups[1]"/>
+          </div>
+          <div class="flex sm:gap-16">
+            <footer-group class="flex-1"  [group]="groups[2]"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-divider-light flex justify-between border-t py-6 text-xs dark:border-divider-dark">
+      <div class="font-semibold">
+        &copy; {{year}}, Sergio Duca
+      </div>
+      <div class="text-slate-500 dark:text-slate-400">
+        <a
+          [href]="Links.ProjectUpdateds"
+          target="_blank"
+          rel="noreferrer nofollow"
+          class="hover:underline">
+          <span>see the recent update on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

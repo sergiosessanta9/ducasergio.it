@@ -1,0 +1,66 @@
+.cls-1 {
+  @apply fill-current text-slate-950 dark:text-slate-800;
+}
+
+.cls-6{
+  @apply fill-current text-slate-100 dark:text-slate-300;
+}
+
+.cls-2{
+  @apply fill-current text-accent-600 dark:text-accent-400;
+}
+
+.cls-3 {
+  @apply fill-current text-slate-600 dark:text-slate-800;
+}
+
+* {
+  @apply text-slate-600;
+}
+
+h1 {
+  transform: translateX(-32px);
+  opacity: 0;
+  animation: slide-in 0.5s 0.2s forwards ease;
+}
+
+p {
+  transform: translateX(-32px);
+  opacity: 0;
+  animation: slide-in 0.5s forwards ease-in;
+}
+
+span {
+  @apply text-accent-600 mb-1 block text-lg font-extrabold capitalize leading-none md:mb-0 md:text-2xl dark:text-accent-400;
+  transform: translateX(-32px);
+  opacity: 0;
+  animation: slide-in 0.5s 0.1s forwards ease;
+}
+@keyframes slide-in {
+
+  50% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  35%  { transform: translate(0, -85px); }
+  100%   { transform: translate(0, -0px); }
+}

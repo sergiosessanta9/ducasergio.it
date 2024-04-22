@@ -1,0 +1,59 @@
+<div *ngIf="!small; else isSmall">
+    <button
+            type="button"
+            class="flex flex-1 items-center gap-4 rounded-2xl border-2 bg-white px-4 py-4 text-left"
+            [ngClass]="{
+                'dark:bg-slate-900': true,
+                'border-accent-400 dark:border-accent-400': active,
+                'border-divider-light dark:border-divider-dark': !active
+              }"
+            (click)="onClick()">
+        <ng-container *ngIf="icon">
+    <span
+            class="hidden w-24 shrink-0 justify-center text-center text-7xl font-black xl:flex"
+            [ngClass]="{
+        'text-accent-600 dark:text-accent-400': active,
+        'text-slate-400 dark:text-slate-600': !active
+      }">
+      <svg-icon [icon]="icon"/>
+    </span>
+        </ng-container>
+        <span class="flex-1">
+    <span
+            class="block font-bold"
+            [ngClass]="{
+                'text-accent-600 dark:text-accent-400': active,
+                'text-slate-700 dark:text-slate-200': !active
+              }">
+      {{ title }}
+    </span>
+    <span
+            *ngIf="description"
+            class="mt-1 block text-sm text-slate-600 dark:text-slate-400">
+      {{ description }}
+    </span>
+  </span>
+    </button>
+</div>
+
+<ng-template #isSmall>
+    <button
+            type="button"
+            class="flex flex-col items-center rounded-xl p-2 text-sm"
+            [ngClass]="{
+                'text-accent-600 dark:text-accent-400': active,
+                'text-slate-400 dark:text-slate-600': !active
+              }"
+            (click)="onClick()">
+        <span class="text-4xl font-black">
+            <svg-icon [icon]="icon"/>
+        </span>
+        <span class="font-medium" [ngClass]="{
+                  'text-accent-600 dark:text-accent-400': active,
+                  'text-slate-500 dark:text-slate-400': !active
+                }">
+                {{ title }}
+      </span>
+    </button>
+
+</ng-template>

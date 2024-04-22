@@ -1,0 +1,17 @@
+<div [@techStackAnimation]="animationState" (@techStackAnimation.done)="onAnimationComplete()">
+  <p class="mb-2.5 text-sm text-slate-600 dark:text-slate-400">current favorite tech stack/tools:</p>
+  <ul class="flex items-center gap-3.5 text-slate-500 dark:text-slate-500">
+    <li *ngFor="let icon of icons; let i = index">
+      <div>
+        <svg-icon
+          *ngIf="icon?.component; else divider"
+          [style.animation-delay]="1.25+(i* 0.025)+'s'"
+          className="{{icon.classes}} transition duration-200 fill-current hover:fill-[{{icon.hoverColor}}]"
+          [icon]="icon?.component!"/>
+        <ng-template #divider>
+          <div [style.animation-delay]="1.25+(i* 0.025)+'s'" class="{{icon.classes}}"></div>
+        </ng-template>
+      </div>
+    </li>
+  </ul>
+</div>

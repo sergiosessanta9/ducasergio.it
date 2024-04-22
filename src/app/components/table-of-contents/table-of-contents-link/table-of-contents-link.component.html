@@ -1,0 +1,12 @@
+<div>
+  <a
+          [ngClass]="{
+        'toc-link px-3 py-1.5': true,
+        'toc-link--depth-2': link?.depth == 2,
+        'toc-link--active': link?.visible
+      }"
+          [href]="link?.slug"
+  >
+    {{ link?.title }}
+  </a>
+</div>

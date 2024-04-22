@@ -1,0 +1,142 @@
+<page-header class="pointer-events-none select-none" [title]="'Personal Blog'"
+    description="Web development thoughts and stories.">
+    <ng-template>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="stroke-accent-500 -mt-16 h-full opacity-60 dark:opacity-40">
+            <path
+                d="M204.055 213.905q-18.12-5.28-34.61-9a145.92 145.92 0 0 1-6.78-44.33c0-65.61 42.17-118.8 94.19-118.8 52.02 0 94.15 53.14 94.15 118.76a146.3 146.3 0 0 1-6.16 42.32q-20.52 4.3-43.72 11.05c-22 6.42-39.79 12.78-48.56 16.05-8.72-3.27-26.51-9.63-48.51-16.05zm-127.95 84.94a55.16 55.16 0 1 0 55.16 55.15 55.16 55.16 0 0 0-55.16-55.15zm359.79 0a55.16 55.16 0 1 0 55.16 55.15 55.16 55.16 0 0 0-55.15-55.15zm-71.15 55.15a71.24 71.24 0 0 1 42.26-65v-77.55c-64.49 0-154.44 35.64-154.44 35.64s-89.95-35.64-154.44-35.64v74.92a71.14 71.14 0 0 1 0 135.28v7c64.49 0 154.44 41.58 154.44 41.58s89.99-41.55 154.44-41.55v-9.68a71.24 71.24 0 0 1-42.26-65z"
+                [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10" stroke-dasharray="10"></path>
+        </svg>
+    </ng-template>
+</page-header>
+<div class="scroll-mt-[86px]" data-accent="violet">
+    <div class="content-wrapper">
+        <div class="flex flex-col gap-8 md:flex-row md:gap-8 lg:gap-24">
+            <div class="md:w-64"></div>
+            <div class="flex-1">
+                <div class="mb-8 flex items-start gap-4 md:gap-6"
+                    [ngClass]="{'md:mb-12': article.pinned, 'md:mb-4': !article.pinned}"
+                    *ngFor="let article of articles">
+                    <div *ngIf="article.pinned; else notPinned" class="flex-1" [ngClass]="{'md:mt-6': article.pinned}">
+                        <article lang="en" class="relative sm:rounded-2xl overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute pinned"></div>
+                            </div>
+                            <a class="group relative mb-6 block overflow-hidden bg-gradient-to-t sm:mb-0 sm:rounded-2xl border-divider-light sm:border sm:p-4 md:p-6 dark:border-divider-dark"
+                                [routerLink]="'/blog/'+article.url">
+                                <div class="absolute -inset-x-64 inset-y-0 z-[-1]"
+                                    style="opacity: 0; transform: translateX(100%) translateZ(0px);">
+                                    <div
+                                        class="absolute inset-y-0 w-10 -rotate-45 scale-[4] bg-black opacity-[0.08] dark:bg-white dark:opacity-[0.14]">
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative mb-4 flex items-center gap-2 font-semibold text-slate-500 sm:text-slate-500 dark:sm:text-accent-400 dark:text-slate-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" stroke="currentColor"
+                                        fill="currentColor" stroke-width="0" class="h-5 w-5">
+                                        <path
+                                            d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A5.921 5.921 0 0 1 5 6.708V2.277a2.77 2.77 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354z">
+                                        </path>
+                                    </svg>
+                                    Pinned Post
+                                </div>
+                                <div
+                                    class="text-slate mb-2 flex flex-col gap-2 text-xs text-slate-500 dark:text-slate-400 md:mb-1">
+                                    <div class="flex gap-1">
+                                        <time datetime="2024-02-25"
+                                            class="first-letter:uppercase">{{article.creation}}</time>
+                                        <span>·</span>
+                                        <span>{{article.language}}</span>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <h2 class="text-xl font-extrabold text-slate-700 md:text-2xl dark:text-slate-300">
+                                        {{article.title}}</h2>
+                                </div>
+                                <p class="mb-3 block leading-relaxed text-slate-600 dark:text-slate-400">
+                                    {{article.subtitle}}
+                                </p>
+                                <div
+                                    class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 sm:mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill="none"
+                                        class="-mt-0.5 h-4 w-4">
+                                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                                    </svg>
+                                    <span class="flex gap-1.5">
+                                        <span class="flex items-center gap-1.5" title="Number of view(s)">
+                                            <span>{{article.views}}</span> Views</span>
+                                        <span>·</span>
+                                        <span class="flex items-center gap-1.5"
+                                            title="Number of share(s)"><span>{{article.shares}}</span> Shares
+                                        </span>
+                                    </span>
+                                </div>
+                            </a>
+
+                        </article>
+                    </div>
+                    <ng-template #notPinned>
+                        <div
+                            class="border-divider-light mt-14 hidden w-8 -translate-y-1 border-b md:mt-16 md:w-20 lg:block dark:border-divider-dark">
+                        </div>
+                        <div class="flex-1">
+                            <article lang="en">
+                                <a class="group relative mb-6 block overflow-hidden bg-gradient-to-t sm:mb-0 sm:rounded-2xl sm:p-4 md:p-6"
+                                    [routerLink]="'/blog/'+article.url">
+                                    <div
+                                        class="text-slate mb-2 flex flex-col gap-2 text-xs text-slate-500 dark:text-slate-400 md:mb-1">
+                                        <div class="flex gap-1">
+                                            <time datetime="2023-02-06"
+                                                class="first-letter:uppercase">{{article.creation}}</time>
+                                            <span>·</span>
+                                            <span>{{article.language}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <h2
+                                            class="text-xl font-extrabold text-slate-700 md:text-2xl dark:text-slate-300">
+                                            {{article.title}}</h2>
+                                    </div>
+                                    <p class="mb-3 block leading-relaxed text-slate-600 dark:text-slate-400">
+                                        {{article.subtitle}}</p>
+                                    <div
+                                        class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"
+                                            fill="none" class="-mt-0.5 h-4 w-4">
+                                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                                        </svg>
+                                        <span class="flex gap-1.5">
+                                            <span class="flex items-center gap-1.5" title="Number of view(s)">
+                                                <span>{{article.views}}</span> Views</span>
+                                            <span>·</span>
+                                            <span class="flex items-center gap-1.5"
+                                                title="Number of share(s)"><span>{{article.shares}}</span> Shares
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div
+                                        class="text-accent-600 items-center gap-1 text-sm font-semibold dark:text-accent-400 flex">
+                                        read more
+                                        <svg viewBox="0 0 20 20" fill="currentColor"
+                                            class="group-hover:animate-bounce-x mt-1 h-3 w-3 transition">
+                                            <path
+                                                d="M14.5 7.40192C16.5 8.55662 16.5 11.4434 14.5 12.5981L8.5 16.0622C6.5 17.2169 4 15.7735 4 13.4641L4 6.5359C4 4.2265 6.5 2.78312 8.5 3.93782L14.5 7.40192Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="relative h-[590px] w-[603px]"
+     [style.mask-image]="imageMask"
+     [style.-webkit-mask-image]="imageMask">
+  <div class="from-accent-400/20 via-accent-400/0 absolute top-0 right-0 h-[590px] w-[375px] rounded-full bg-gradient-to-t dark:from-accent-600/10 dark:via-accent-600/0">
+    <div class="absolute right-0 bottom-0 overflow-hidden">
+      <div class="absolute z-[10]" *ngIf="controlsOutlineAnimation" @outlineAnimation>
+        <header-image-animated (onComplete)="onAnimationComplete()"/>
+      </div>
+      <div class="w-[360px] h-[554px]" >
+        <img
+          *ngIf="!controlsOutlineAnimation" 
+          @imageAnimation
+          src="./assets/images/me.png"
+          alt="Sergio Duca Illustration"
+          width="360"
+          height="526"
+          class="hidden max-w-none lg:block dark:brightness-[.82]"/>
+      </div>
+    </div>
+  </div>
+</div>

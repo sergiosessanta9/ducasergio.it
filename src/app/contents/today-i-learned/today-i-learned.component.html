@@ -1,0 +1,61 @@
+<page-header class="pointer-events-none select-none" [title]="'Today I Learned'"
+    description="Short notes on front-end related topics.">
+    <ng-template>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="0.1"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="stroke-accent-500 -mt-7 h-full opacity-60 dark:opacity-40">
+            <circle cx="5" cy="6" r="2" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10">
+            </circle>
+            <circle cx="12" cy="6" r="2" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10">
+            </circle>
+            <circle cx="19" cy="6" r="2" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10">
+            </circle>
+            <circle cx="5" cy="18" r="2" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10">
+            </circle>
+            <circle cx="12" cy="18" r="2" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10">
+            </circle>
+            <line x1="5" y1="8" x2="5" y2="16" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10">
+            </line>
+            <line x1="12" y1="8" x2="12" y2="16" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10"></line>
+            <path d="M19 8v2a2 2 0 0 1 -2 2h-12" [@drawLine]="animationState" pathLength="1" stroke-dashoffset="10"
+                stroke-dasharray="10"></path>
+        </svg>
+    </ng-template>
+</page-header>
+<div *ngIf="!error" class="scroll-mt-[86px]">
+    <div *ngIf="articles" class="content-wrapper mdx-contents" data-accent="violet">
+        <div *ngFor="let article of articles; index as i" class="flex flex-row gap-6 md:gap-12 lg:gap-24">
+            <div *ngIf="loaded && !error" class="hidden md:block md:pb-24 min-w-[160px]">
+                <div class="mt-4 pt-1.5 md:sticky md:top-[86px] fm:relative fm:top-0">
+                    <div class="font-semibold text-slate-700 md:text-right dark:text-slate-300"><time
+                            class="md:block lg:hidden capitalize">{{articles?.creation}}</time><time
+                            class="md:hidden lg:block capitalize">{{article?.creation}}</time></div>
+                </div>
+            </div>
+            <div *ngIf="loaded && !error" class="border-divider-light items-stretch border dark:border-divider-dark"></div>
+            <div class="flex min-w-0 flex-1 flex-col gap-16 py-8 md:gap-0 md:py-4">
+                <article class="md:pb-16">
+                    <div *ngIf="loaded && !error" class="pointer-events-none sticky top-[86px] -ml-8 pb-12 md:-ml-12 lg:-ml-24 fm:relative fm:top-0">
+                        <div class="absolute -ml-0.5 mt-2.5 h-4 w-4 rounded-full border-2 border-slate-700 bg-white md:-ml-3 md:mt-2 md:h-5 md:w-5 dark:border-slate-300 dark:bg-slate-900">
+                        </div>
+                        <div class="absolute z-[-1] mt-4 -ml-2 w-8 border border-slate-700 md:-ml-4 md:w-10 lg:w-12 dark:border-slate-300">
+                        </div>
+                    </div>
+                    <div class="-mt-[4.5rem] md:-mt-20" (click)="handleClick($event, i)">
+                        <div appMarkDown [data]="b64ToText(article.markdown)" (onLoad)="onLoad($event)"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="error">
+    <div class="content-wrapper flex font-normal text-slate-400 md:text-right dark:text-slate-700" data-accent="violet">Nothing to see</div>
+</div>

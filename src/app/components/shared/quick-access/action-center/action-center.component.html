@@ -1,0 +1,43 @@
+<div class="flex flex-col gap-2 overflow-hidden" [@animation]="animateInStart">
+  <div class="px-2 text-xl font-bold">
+    Action Center
+  </div>
+
+  <div class="flex flex-1 flex-col gap-8 p-2">
+    <div class="relative flex h-24 gap-4">
+
+      <action-center-button
+        class="flex flex-1"
+        [active]="false"
+        [text]="theme == 'dark' ? 'Dark Mode: On' : 'Dark Mode: Off'"
+        (onClick)="handleThemeChange()"
+        [icons]="[Icons.DarkIcon, Icons.LightIcon]"/>
+
+      <action-center-button
+        class="flex flex-1"
+        [active]="paletteOpen"
+        [text]="getAccentColor() | titlecase"
+        (onClick)="toggleFocusMode()"
+        [icons]="[Icons.PaletteIcon]"/>
+
+    </div>
+
+    <div [@palette]="paletteOpen" class="-mt-4">
+      <div class="dark:bg-[#1d263a] bg-white/50 rounded-xl">
+        <div
+          class="flex-1 border-divider-light flex items-center justify-between border-b py-3 px-5 text-sm font-bold overflow-hidden dark:border-divider-dark z-10">
+          <h2 id="table-of-contents" class="text-slate-700 dark:text-slate-300 ng-tns-c2354412650-8">
+            Select color
+          </h2>
+        </div>
+
+        <ul class="flex-1 max-h-[400px] overflow-y-auto scrollbar-hide" [@paletteList]="paletteOpen">
+          <li class="flex px-6  py-3 items-center" *ngFor="let color of colors">
+            <div class="h-5 aspect-square dark:bg-slate-400 rounded-md" [ngClass]="{'bg-accent-600 dark:bg-accent-400': color == global.getAccentColor(), 'bg-slate-600 dark:bg-slate-400': color != global.getAccentColor()}"></div>
+            <button type="button" (click)="changeAccent(color)" class="toc-link" [ngClass]="{'toc-link--active': color == global.getAccentColor()}">{{color | titlecase}}</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="relative">
+  <button class="nav-link nav-link--label ml-2 " (click)="toggleDropdown()">
+    {{ title }}
+    <svg-icon [icon]="Icons.ChevronRightIcon" className="h-3 w-3"/>
+    <!--icon-->
+  </button>
+  <div [@dropdownAnimation]="animationState"
+       class="border-divider-light absolute top-11 flex w-40 flex-col
+              rounded-2xl border bg-white/70 p-2 backdrop-blur
+              dark:border-divider-dark dark:bg-slate-900/80">
+
+    <ng-container *ngFor="let item of items">
+      <a [routerLink]="item.href"
+         [@menuItemAnimation]="animationState"
+         class="nav-link h-8 cursor-pointer text-xs hover:bg-slate-200/40 dark:hover:bg-slate-600/10;"
+         (click)="toggleDropdown()">
+        {{ item.title }}
+      </a>
+    </ng-container>
+  </div>
+</div>

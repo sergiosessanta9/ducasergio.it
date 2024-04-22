@@ -1,0 +1,28 @@
+svg-icon{
+  opacity: 0;
+  animation: fadein 0.2s forwards ease-in;
+  @apply cursor-pointer;
+}
+
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.tech-icon {
+  @apply transition duration-200;
+  @apply fill-current;
+
+  /*
+
+  &[style*="--hover-color"] {
+    --default-color: fill-current;
+    fill: var(--default-color);
+  }
+
+  &:hover {
+    fill: var(--hover-color, var(--default-color));
+  }
+  
+   */
+}

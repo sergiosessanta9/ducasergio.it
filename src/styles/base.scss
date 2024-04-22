@@ -1,0 +1,91 @@
+@tailwind base;
+
+@font-face {
+  font-family: 'font-mono';
+  src: url("../assets/fonts/PlusJakartaSans-Regular.ttf") format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'font-sans';
+  src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format('truetype');
+  font-weight: 100 1000;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    @apply scroll-smooth;
+    scroll-padding-top: 5.6rem;
+  }
+
+  html,
+  body,
+  #__next,
+  #__root {
+    @apply h-full;
+    --font-sans: 'font-sans';
+    --font-mono: 'font-mono';
+  }
+
+  #__root {
+    @apply flex flex-col font-sans;
+    --code-bg: var(--prism-color-background);
+    --code-window: #e2e8f0;
+  }
+
+  page-template{
+    flex: 1 1 0%;
+  }
+
+  main {
+    @apply flex-1;
+  }
+
+  body {
+    @apply bg-white text-slate-900;
+    @apply dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
+  }
+
+  :focus-visible {
+    @apply ring-accent-400 relative rounded-xl outline-none ring-2;
+  }
+
+  ::selection {
+    @apply bg-accent-200/60 text-accent-900;
+    @apply dark:bg-accent-400/30 dark:text-accent-100;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active{
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover, 
+  .dark input:-webkit-autofill:focus, 
+  .dark input:-webkit-autofill:active{
+      -webkit-box-shadow: 0 0 0 30px #161e31 inset !important;
+  }
+
+}
+
+.font-mono {
+  font-family: 'font-mono', sans-serif !important;
+}
+
+#__root {
+  font-family: 'font-sans', sans-serif !important;
+}

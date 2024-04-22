@@ -1,0 +1,19 @@
+<a [routerLink]="href" [title]="title" class="flex h-9 items-center gap-2 rounded-xl px-2">
+  <div class="flex items-center gap-1.5 font-[1000] leading-none">
+    <div [ngClass]="{
+    'border-box flex h-8 w-8 items-center justify-center rounded-xl border-2 sm:h-6 sm:w-6 sm:rounded-lg': true,
+    'border-accent-600 dark:border-accent-500': true,
+    'bg-accent-600 dark:bg-accent-500': isActive,
+    }">
+      <div [ngClass]="{
+      'h-3.5 w-0.5 rotate-12 rounded-full sm:h-3 sm:w-0.5': true,
+      'bg-white': isActive,
+      'bg-accent-600 dark:bg-accent-400': !isActive
+      }"></div>
+    </div>
+    <div class="-mt-1 hidden text-xl sm:block">
+      <span class="text-slate-900 dark:text-slate-200">duca</span>
+      <span class="text-accent-600 dark:text-accent-500">dev</span>
+    </div>
+  </div>
+</a>

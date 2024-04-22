@@ -1,0 +1,26 @@
+<div class="flex gap-2">
+  <div
+    [@itemAnimation]="buttonContactAnimation"
+    class="relative z-20">
+    <button-contact/>
+  </div>
+  <div *ngIf="isFree; else notFree">
+    <div
+      class="relative z-10">
+      <div [@isFreeAnimation]="isFreeAnimation"
+           (@isFreeAnimation.done)="isFreeAnimationComplete()">
+        <available-for-hire />
+      </div>
+      <div
+        [@buttonResumeAnimation]="buttonResumeAnimation"
+        class="absolute top-0 left-0">
+        <button-resume/>
+      </div>
+    </div>
+  </div>
+  <ng-template #notFree>
+    <div >
+      <button-resume/>
+    </div>
+  </ng-template>
+</div>

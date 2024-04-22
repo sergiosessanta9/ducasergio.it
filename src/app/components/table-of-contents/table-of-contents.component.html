@@ -1,0 +1,27 @@
+<nav [@fadeIn]="show" aria-label="Page table of contents"
+     class="border-divider-light rounded-xl border bg-white dark:border-divider-dark dark:bg-[#161e31] overflow-hidden">
+    <div class="border-divider-light flex items-center justify-between border-b py-3 px-5 text-sm font-bold overflow-hidden dark:border-divider-dark z-10">
+        <h2 class="text-slate-700 dark:text-slate-300" id="table-of-contents">
+            <span [ngClass]="{ 'lg:hidden xl:inline': true }">Table of </span>
+            Contents
+        </h2>
+        <div [ngStyle]="scrollButtonStyles">
+            <button
+                    class="border-divider-light text-accent-700 flex h-6 cursor-pointer items-center rounded-full border px-2 text-xs font-normal dark:border-divider-dark dark:text-accent-400"
+                    type="button"
+                    [attr.tabindex]="global.isScrolled ? 0 : -1"
+                    (click)="handleScrollToTopClick()">
+                scroll to top
+            </button>
+        </div>
+    </div>
+    <div class="relative overflow-hidden z-0">
+        <ol class="toc flex flex-col gap-1 px-2 py-3">
+            <li *ngFor="let item of items let i = index">
+                <table-of-contents-link
+                        [link]="item"/>
+                <div *ngIf="item.visible" class="toc-visible"></div>
+            </li>
+        </ol>
+    </div>
+</nav>

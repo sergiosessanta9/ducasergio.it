@@ -1,0 +1,33 @@
+<header id="page-header"
+    class="mdx-contents background-grid background-grid--fade-out border-divider-light z-[900] mb-10 border-b pt-32 pb-10 md:mb-0 sm:border-none md:pb-20 md:pt-40 dark:border-divider-dark">
+
+    <div *ngIf="inputElement" class="content-wrapper absolute inset-0 overflow-hidden" data-accent="violet">
+        <div
+            class="background-image background-image--fade-out pointer-events-none absolute inset-0 hidden select-none lg:block">
+            <div class="content-wrapper relative h-full">
+                <div class="absolute right-0 -top-24 bottom-0">
+                    <ng-container [ngTemplateOutlet]="inputElement"></ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="content-wrapper">
+        <div style="opacity: 1; transform: none;">
+            <span *ngIf="caption">
+                {{caption}}
+            </span>
+        </div>
+        <div style="opacity: 1; transform: none;">
+            <h1>
+                {{title}}
+            </h1>
+        </div>
+        <div style="opacity: 1; transform: none;">
+            <p>
+                {{description}}
+            </p>
+        </div>
+    </div>
+</header>

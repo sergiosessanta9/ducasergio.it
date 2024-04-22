@@ -1,0 +1,13 @@
+__index {
+  animation: all 0.5;
+}
+
+featured-card{
+  @apply relative z-10 md:flex-1 rounded-2xl border bg-white dark:bg-slate-900 opacity-0;
+  animation: slide-in 0.25s forwards ease-in;
+}
+
+@keyframes slide-in {
+  0%   { opacity: 0; transform: translateY(30px)}
+  100% { opacity: 1; transform: translateY(0px)}
+}

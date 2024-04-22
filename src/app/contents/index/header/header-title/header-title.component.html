@@ -1,0 +1,25 @@
+<div [@headerAnimation]="animationState"
+     class="mb-1 flex items-center gap-1 text-2xl text-slate-600 md:mb-0 md:gap-2 md:text-4xl dark:text-slate-400">
+  hi!
+  <div [@emojiAnimation]="emojiState">
+    <img id="hello-emoji" src="./assets/emojis/love-you-gesture.png" alt="Love-you Gesture" class="w-7 md:w-10" height="48" width="48"
+         (load)="onEmojiLoaded()"/>
+  </div>
+</div>
+
+<span class="text-slate-700 dark:text-slate-300">
+  <span [@textAnimation]="animationState" class="mb-4 block text-[2.5rem] font-[1000] leading-none md:mb-6 md:text-7xl">
+    I&apos;m{{' '}}
+    <strong class="text-accent-600 dark:text-accent-500">
+      Sergio
+    </strong>{{' '}}
+    Duca,{{' '}}
+  </span>
+</span>
+
+<h1 [@descriptionAnimation]="animationState" class="block text-base text-slate-600 md:text-xl dark:text-slate-400">
+  <span class="lowercase">an enthusiastic</span>{{' '}}
+  <strong class="font-bold lowercase text-slate-700 dark:text-slate-300">Full-Stack Developer</strong>{{' '}}
+  with a passion for{{' '}}
+  <span class="block">technological innovation and crafting extraordinary solutions.</span>
+</h1>
