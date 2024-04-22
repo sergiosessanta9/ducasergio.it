@@ -57,7 +57,7 @@ import { SectionContentComponent } from './components/sections/section-content/s
 import { SectionButtonComponent } from './components/sections/section-button/section-button.component';
 import { AppWindowComponent } from './components/shared/app-window/app-window.component';
 import { BrowserTabComponent } from './components/shared/browser-tab/browser-tab.component';
-import { PageHeaderComponent } from './page-header/page-header.component';
+import { PageHeaderComponent } from './components/shared/page-header/page-header.component';
 import { GithubWireframeComponent } from './components/wireframes/github-wireframe/github-wireframe.component';
 import { SkeletonsComponent } from './components/wireframes/skeletons/skeletons.component';
 import { PageUnderConstructionComponent } from './components/page-under-construction/page-under-construction.component';

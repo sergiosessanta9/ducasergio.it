@@ -60,6 +60,7 @@ export class BlogComponent implements OnInit {
         }
       },
       error: (error) => {
+        console.log("Blog error");
         this.hasError = true;
       }
     });
