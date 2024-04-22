@@ -12,7 +12,7 @@
 </page-header>
 <div class="scroll-mt-[86px]" data-accent="violet">
     <div class="content-wrapper">
-        <div *ngIf="articles && articles.length > 0; else noContent" class="flex flex-col gap-8 md:flex-row md:gap-8 lg:gap-24">
+        <div *ngIf="!isEmpty || !hasError; else noContent" class="flex flex-col gap-8 md:flex-row md:gap-8 lg:gap-24">
             <div class="md:w-64"></div>
             <div class="flex-1">
                 <div class="mb-8 flex items-start gap-4 md:gap-6"
