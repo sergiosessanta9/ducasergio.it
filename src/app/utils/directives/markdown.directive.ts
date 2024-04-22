@@ -144,9 +144,9 @@ export class MarkdownDirective implements OnInit {
     };
 
     renderer.image = function(href: string, title: string, text: string) {
-      return `<div class="relative">
+      return `<div class="relative overflow-visible cinema">
                 <div class="absolute -inset-8 z-[-1] rounded-[20%] bg-[length:180%_180%] bg-center opacity-25 blur-2xl hidden dark:block" style="background-image: url(&quot;${href}&quot;);"></div>
-                <img class="mt-4 md:mt-0" src="${href}" alt="${text}">
+                <img class="mt-6 mb-6" src="${href}" alt="${text}">
               </div>`;
     };
 

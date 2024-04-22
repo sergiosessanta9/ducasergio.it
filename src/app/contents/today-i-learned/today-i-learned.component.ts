@@ -53,6 +53,10 @@ export class TodayILearnedComponent implements OnInit {
       setTimeout(() => {
         window.scrollTo(0, 0);
       }, 100);
+    } else {
+      setTimeout(() => {
+        this.scrollToElement(window.location.hash);
+      }, 800);
     }
 
     setTimeout(() => {
@@ -60,6 +64,13 @@ export class TodayILearnedComponent implements OnInit {
     }, 500); 
   }
 
+  protected scrollToElement(id: string) {
+    const element = document.getElementById(id.replaceAll('#', ''));
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
+    }
+  }
+  
   b64ToText(text: string){
     return atob(text);
   }
