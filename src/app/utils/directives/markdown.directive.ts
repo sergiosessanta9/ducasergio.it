@@ -214,7 +214,7 @@ export class MarkdownDirective implements OnInit {
                 (options.footer 
                   ?
                   `<div class="mdx-code__footer">
-                    <div class="mdx-code__footer-item uppercase">${language}</div>
+                    <div class="mdx-code__footer-item ${options.upper ? 'uppercase' : 'capitalize'}">${language}</div>
                     <div class="mdx-code__footer-item hidden sm:flex">Lines: ${lines}</div>
                     <div class="mdx-code__footer-item uppercase">UTF-8</div>
                   </div>`
