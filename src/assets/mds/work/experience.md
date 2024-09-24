@@ -2,7 +2,7 @@
 title: Experience
 description: My Journey in Software Development and Learning
 caption: Work
----
+--- 
 
 Hello there! I'm excited to share my journey in the world of software development with you. It's been quite an adventure since I
 graduated from Amedeo Avogadro Institute in Turin back in 2019. Fast forward to today, I've spent the past three years thriving at
@@ -18,9 +18,9 @@ Exprivia, a fantastic company where I've honed my skills and embraced new challe
 
 ## [Embracing New Opportunities at Exprivia](/work/experience#embracing-new-opportunities-at-exprivia)
 
-My path led me to Exprivia, a dynamic and innovative company that I've proudly called home for the past three years. Here's what I've achieved:
+My journey led me to Exprivia, a dynamic and innovative company that I've proudly called home for the past three years. During this time, I’ve primarily focused on the payment sector, working extensively on integrations with [PagoPa](https://www.pagopa.gov.it/::blank) and contributing to healthcare initiatives. Here's what I've achieved:
 
-- 🛠️ Collaborated with a talented team to develop cutting-edge solutions
+- 🛠️ Collaborated with a talented team to develop cutting-edge solutions in the payments and healthcare domains
 - 🌐 Mastered WSO2, a significant step in expanding my technical expertise
 - 🚀 Innovated and improved processes, contributing to team success
 

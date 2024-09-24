@@ -1,18 +1,20 @@
 <div id="__index">
-  <header id="page-header" class="background-grid background-grid--fade-out pt-36 pb-20 lg:pb-28 lg:pt-52 bord border-divider-light dark:border-divider-dark" data-accent="violet">
+  <header id="page-header"
+    class="background-grid background-grid--fade-out pt-36 pb-20 lg:pb-28 lg:pt-52 bord border-divider-light dark:border-divider-dark"
+    data-accent="violet">
     <div class="content-wrapper">
       <div class="relative">
         <div class="relative z-10">
-          <header-title/>
+          <header-title />
         </div>
         <div class="mt-6 md:mt-8">
-          <header-contact/>
+          <header-contact />
         </div>
         <div class="mt-20 lg:mt-36">
-          <header-tech-stack/>
+          <header-tech-stack />
         </div>
         <div class="pointer-events-none absolute -top-36 right-0 z-0 hidden select-none lg:block">
-          <header-image/>
+          <header-image />
         </div>
       </div>
     </div>
@@ -22,16 +24,35 @@
     <div class="relative mb-24 mt-20 sm:-mt-8 lg:-mt-16 lg:mb-24 md:block">
       <div class="content-wrapper">
         <div class="flex gap-4 flex-col sm:flex-wrap md:flex-row lg:gap-8">
-          <featured-card *ngFor="let item of items; let i = index"
-                         [style.animation-delay]="2.25+(i* 0.1)+'s'"
-                         class="border-divider-light  dark:border-divider-dark"
-                         [card]="item"/>
+          <featured-card *ngFor="let item of items; let i = index" [style.animation-delay]="2.25+(i* 0.1)+'s'"
+            class="border-divider-light  dark:border-divider-dark" [card]="item" />
         </div>
       </div>
     </div>
 
-    <header-quote/>
+    <header-quote />
 
+  </div>
+
+  <div class="background-grid background-grid--fade-out mt-0 sm:mt-20 border-t border-divider-light dark:border-divider-dark">
+    <section class="mt-12 lg:mt-24 mb-12 lg:mb-24">
+      <header class="mb-8">
+        <div class="content-wrapper">
+          <h2 class="text-accent-600 mb-2 block font-black lg:mb-4 dark:text-accent-400">Detail Oriented</h2>
+          <p class="mb-4 text-3xl font-black text-slate-700 lg:text-4xl dark:text-slate-200">Sharp Attention to Detail</p>
+          <p class="max-w-lg text-slate-600 dark:text-slate-400">I catch the smallest code issues, ensuring top-quality, efficient software.</p>
+        </div>
+      </header>
+    </section>
+    <section class="mb-12 lg:mb-24">
+      <header class="mb-8">
+        <div class="content-wrapper">
+          <h2 class="text-accent-600 mb-2 block font-black lg:mb-4 dark:text-accent-400">Pretty &amp; Optimized</h2>
+          <p class="mb-4 text-3xl font-black text-slate-700 lg:text-4xl dark:text-slate-200">Clear and Efficient Code</p>
+          <p class="max-w-lg text-slate-600 dark:text-slate-400">Writing clean code is my top priority, always striving to keep it as optimized and efficient as possible.</p>
+        </div>
+      </header>
+    </section>
   </div>
 
 </div>

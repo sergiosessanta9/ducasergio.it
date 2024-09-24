@@ -44,11 +44,12 @@ export class ProjectsComponent {
       title: 'sergiosessanta9/ducasergio.it - GitHub',
       isActive: this.currentState === 'github'
     },
+    /*
     {
       icon: Icons.Npm,
       title: 'ducasergio.it - npm',
       isActive: this.currentState === 'npm'
-    }
+    }*/
   ];
 
   setCurrentState(state: 'npm' | 'github'): void {

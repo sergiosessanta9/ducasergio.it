@@ -28,9 +28,9 @@
                 <app-section-button title="Available on GitHub" [icon]="Icons.GitHub"
                     description="Access powerful and flexible project on GitHub with MIT license."
                     [active]="currentState === 'github'" (clickEvent)="setCurrentState('github')"></app-section-button>
-                <app-section-button title="npm package" [icon]="Icons.Npm"
+                <!--<app-section-button title="npm package" [icon]="Icons.Npm"
                     description="Install and use the package with ease thanks to its typed options."
-                    [active]="currentState === 'npm'" (clickEvent)="setCurrentState('npm')"></app-section-button>
+                    [active]="currentState === 'npm'" (clickEvent)="setCurrentState('npm')"></app-section-button>-->
             </div>
         </div>
         <div class="w-full lg:w-auto">
@@ -41,9 +41,9 @@
                             <github-wireframe author="sergiosessanta9" license="MIT" repository="ducasergio.it"
                                 description="Personal, modern and clean portfolio inspired by enji.dev but made in Angular.." />
                         </ng-container>
-                        <ng-container *ngIf="currentState === 'npm'">
+                        <!--<ng-container *ngIf="currentState === 'npm'">
                             GINO
-                        </ng-container>
+                        </ng-container>-->
                     </app-app-window>
                 </div>
             </div>

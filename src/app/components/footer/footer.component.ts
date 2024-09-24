@@ -21,7 +21,7 @@ export class FooterComponent {
       new FooterLink('Studio','/work/studio'),
     ]),
     new FooterGroup('Learn', [
-      new FooterLink('Docs','/docs'),
+      //new FooterLink('Docs','/docs'),
       new FooterLink('Personal Blog','/blog', 'new'),
       new FooterLink('T.I.L','/today-i-learned', 'new'),
     ]),
