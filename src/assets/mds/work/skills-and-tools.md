@@ -77,6 +77,7 @@ I represent all data in labels to make it easier to read. The **underline indica
   <label style="--hover-text: 40%">JavaFX</label>
   <label style="--hover-text: 20%">C/C++</label>
   <label style="--hover-text: 20%">C#</label>
+  <label style="--hover-text: 15%">Rust</label>
   <label style="--hover-text: 30%">Swift</label>
   <label style="--hover-text: 30%">Kotlin</label>
   <label style="--hover-text: 50%">Flutter</label>
@@ -87,8 +88,9 @@ I represent all data in labels to make it easier to read. The **underline indica
 <div class="chips">
   <label style="--hover-text: 60%">Tailwind CSS</label>
   <label style="--hover-text: 40%">Bootstrap</label>
-  <label style="--hover-text: 30%">React</label>
-  <label style="--hover-text: 20%">Next.js</label>
+  <label style="--hover-text: 60%">Angular</label>
+  <label style="--hover-text: 20%">React</label>
+  <label style="--hover-text: 10%">Next.js</label>
   <label style="--hover-text: 60%">Maven</label>
   <label style="--hover-text: 70%">JSON</label>
   <label style="--hover-text: 70%">XML</label>
@@ -97,9 +99,9 @@ I represent all data in labels to make it easier to read. The **underline indica
 ### [Softwares and Tools](/work/skills-and-tools#softwares-and-tools)
 
 <div class="chips">
-  <label style="--hover-text: 60%">VS Code</label>
+  <label style="--hover-text: 80%">VS Code</label>
   <label style="--hover-text: 60%">IntelliJ IDEA</label>
-  <label style="--hover-text: 50%">Git</label>
+  <label style="--hover-text: 60%">Git</label>
   <label style="--hover-text: 20%">Svn</label>
   <label style="--hover-text: 60%">DB Eaver</label>
   <label style="--hover-text: 30%">Xcode</label>

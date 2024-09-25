@@ -197,7 +197,7 @@ code[class*="language-java"] {
 .language-css,
 .language-scss {
     .code-line {
-        @apply text-[var(--prism-color-string)];
+        @apply text-[var(--prism-color-base-primary)];
     }
 
     .token {
