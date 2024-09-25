@@ -23,14 +23,14 @@
     </div>
   </div>
   <!--<div class="content-wrapper min-h-full flex-shrink-0 overflow-hidden lg:overflow-visible">-->
-  <div class="content-wrapper min-h-full flex-shrink-0 overflow-y-visible lg:overflow-visible">
+  <div class="overflow-hidden content-wrapper min-h-full flex-shrink-0 overflow-y-visible lg:overflow-visible">
     <div class="flex flex-row-reverse gap-8 xl:gap-24">
       <div class="-mt-48 hidden lg:block">
         <div class="sticky top-24 z-[901] w-64 xl:w-[272px] fm:relative fm:top-0">
           <table-of-contents [currentPage]="path" [items]="article?.metadata?.tableOfContents ??[]" [show]="loaded" />
         </div>
       </div>
-      <div class="mdx-contents">
+      <div class="mdx-contents max-w-[687px]" (click)="handleClick($event)">
         <div appMarkDown (onLoad)="onLoad($event)"></div>
         <div *ngIf="article?.metadata?.tags"
           class="mt-24 flex flex-col gap-6 text-sm text-slate-600 md:flex-row md:items-center md:justify-between dark:text-slate-400">

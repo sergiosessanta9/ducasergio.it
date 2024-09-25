@@ -16,7 +16,11 @@ export class GlobalService {
     localStorage.setItem(this.themeKey, theme);
     document.documentElement.classList.add(theme);
     this.hangeThemeColor(theme);
-    
+  }
+
+  setThemeWithoutSaving(theme: string) {
+    document.documentElement.classList.add(theme);
+    this.hangeThemeColor(theme);
   }
 
   setAccentColor(accent: string) {

@@ -6,8 +6,8 @@ import { ReactionVO } from 'src/app/models/reaction-vo';
 import { ErrorVO } from 'src/app/models/error-vo';
 import { ApiService } from 'src/services/api-service';
 import { ActivatedRoute } from '@angular/router';
-import { ClipboardService } from 'ngx-clipboard';
 import { AnimationVO } from 'src/app/models/animation-vo';
+import { ClipboardService } from 'src/services/clipboard.service';
 
 @Component({
   selector: 'app-media-section',
@@ -145,7 +145,7 @@ export class MediaSectionComponent implements OnInit {
     if (url) {
       window.open(url, "_blank");
     } else {
-      this.clipboardService.copy(this.currentUrl);
+      this.clipboardService.copyTextToClipboard(this.currentUrl);
     }
     this.api.shareBlog(this.blogId).subscribe(
       (data: ErrorVO | any) => {

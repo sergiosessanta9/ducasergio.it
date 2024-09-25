@@ -16,7 +16,6 @@ import {
     ActionCenterButtonComponent
 } from "./components/shared/quick-access/action-center-button/action-center-button.component";
 import {PageIndexComponent} from "./contents/index/page-index.component";
-import {IndexHeaderComponent} from "./contents/index/header/index-header/index-header.component";
 import {HeaderTitleComponent} from "./contents/index/header/header-title/header-title.component";
 import {HeaderContactComponent} from "./contents/index/header/header-contact/header-contact.component";
 import {ButtonContactComponent} from "./components/shared/button-contact/button-contact.component";
@@ -69,7 +68,9 @@ import { ApiService } from 'src/services/api-service';
 import { AlertService } from 'src/services/alert-service';
 import { DatePipe } from '@angular/common';
 import { MediaSectionComponent } from './components/shared/media-section/media-section.component';
-import { ClipboardModule } from 'ngx-clipboard';
+import { SnowEffectComponent } from './components/shared/easter-eggs/snow-effect/snow-effect.component';
+import { ConfettiEffectComponent } from './components/shared/easter-eggs/confetti-effect/confetti-effect.component';
+import { ClipboardService } from 'src/services/clipboard.service';
 
 
 @NgModule({
@@ -88,7 +89,6 @@ import { ClipboardModule } from 'ngx-clipboard';
         ActionCenterComponent,
         ActionCenterButtonComponent,
         PageIndexComponent,
-        IndexHeaderComponent,
         HeaderTitleComponent,
         HeaderContactComponent,
         ButtonContactComponent,
@@ -127,6 +127,8 @@ import { ClipboardModule } from 'ngx-clipboard';
         RequestCvComponent,
         AltertComponent,
         MediaSectionComponent,
+        SnowEffectComponent,
+        ConfettiEffectComponent,
     ],
     imports: [
         BrowserModule,
@@ -137,7 +139,6 @@ import { ClipboardModule } from 'ngx-clipboard';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        ClipboardModule,
     ],
     providers: [
         GlobalService,
@@ -146,7 +147,8 @@ import { ClipboardModule } from 'ngx-clipboard';
         BaseUrlService,
         ApiService,
         AlertService,
-        DatePipe
+        DatePipe,
+        ClipboardService
     ],
     bootstrap: [AppComponent],
 })

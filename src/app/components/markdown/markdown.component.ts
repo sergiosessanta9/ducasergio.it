@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import { IMetadata } from 'src/app/models/interfaces/imetadata';
 import { DatePipe } from '@angular/common';
 import { IArticle } from 'src/app/models/interfaces/iarticle';
+import { ClipboardService } from 'src/services/clipboard.service';
 
 @Component({
   selector: 'app-markdown',
@@ -30,6 +31,7 @@ export class MarkdownComponent implements OnInit {
 
   constructor(
     router: Router, 
+    private clipboardService: ClipboardService,
     private globalService: GlobalService,  
     private datePipe: DatePipe,
     ) {
@@ -70,6 +72,53 @@ export class MarkdownComponent implements OnInit {
     } else {
       this.error = true;
     }
+  }
+
+  handleClick(event: any) {
+    const target = event.target as HTMLElement;
+  
+    // Find the nearest parent element with the class 'mdx-code__copy-button'
+    const parent = target.closest('.mdx-code');
+  
+    if (parent) {
+      const messageElement = parent.querySelector('.mdx-code__copy-button-message');
+      const codeElement = parent.querySelector('code');
+  
+      // Ensure both message and code elements exist
+      if (messageElement && codeElement) {
+        // Remove existing 'copied' class if present
+        if (messageElement.classList.contains('mdx-code__copy-button-message-copied')) {
+          messageElement.classList.remove('mdx-code__copy-button-message-copied');
+        }
+  
+        // Add 'copied' class for the feedback message
+        messageElement.classList.add('mdx-code__copy-button-message-copied');
+  
+        // Copy the code content to the clipboard
+        if (navigator.clipboard) {
+          
+        }
+        //this.clipboardService.copy(this.extractCodeText(codeElement.textContent || ''));
+  
+        // Remove the 'copied' class after 1 second
+        if (this.clipboardService.copyTextToClipboard(this.extractCodeText(codeElement.textContent || ''))) {
+          setTimeout(() => {
+            messageElement.classList.remove('mdx-code__copy-button-message-copied');
+          }, 1000);
+        }
+        
+      }
+    }
+  }
+  
+  private extractCodeText(code: string): string {
+    // This function now extracts the code directly from the code block
+    const regex = /```(.*?)```/s; // Use 's' flag to match across multiple lines if needed
+    const match = code.match(regex);
+  
+    // Remove the first and last lines if they are backticks or language indicators
+    const lines = match ? match[1].trim().split('\n') : code.split('\n');
+    return lines.join('\n');
   }
 
 }

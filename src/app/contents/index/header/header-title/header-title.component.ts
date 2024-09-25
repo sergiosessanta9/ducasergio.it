@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   trigger,
   state,
@@ -40,10 +40,26 @@ export class HeaderTitleComponent {
   textState: 'hide' | 'show' = 'hide';
   descriptionState: 'hide' | 'show' = 'hide';
 
+  // Variabili per gestire i clic
+  clickCount = 0;  // Numero di clic
+  @Output() showConfetti  = new EventEmitter<void>();  // Controlla la visibilità del canvas dei coriandoli
+
   onEmojiLoaded() {
     this.animationState = 'show';
     this.emojiState = 'show';
     this.textState = 'show';
     this.descriptionState = 'show';
+  }
+
+  // Funzione chiamata al clic sull'elemento
+  handleClick() {
+    this.clickCount++;
+    // Se l'utente ha cliccato 5 volte, mostra l'animazione
+    if (this.clickCount === 5) {
+      this.clickCount = 0;  // Resetta il contatore dei clic
+      setTimeout(() => {
+        this.showConfetti.emit();  // Mostra il canvas per i coriandoli
+      }, 0);
+    }
   }
 }

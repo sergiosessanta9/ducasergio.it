@@ -23,7 +23,7 @@ import {
     ]),
     trigger('buttonResumeAnimation', [
       state('hide', style({ opacity: 0, transform: 'translateX(-46px)' })),
-      state('show', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('show', style({ opacity: 1, transform: 'translateY(0)', left: 0 })),
       transition('hide => show', [animate('500ms 4s ease-out')]),
     ]),
   ],

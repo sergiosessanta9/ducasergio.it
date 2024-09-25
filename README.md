@@ -2,7 +2,7 @@
 
 ---
 
-Personal, modern and clean portfolio inspired by [enji.dev](https://github.com/enjidev/enji.dev) but made in Angular..
+Personal, modern and clean portfolio inspired by [enji.dev](https://github.com/enjidev/enji.dev) but made in Angular.
 
 ## 🇮🇹 [ducasergio.it](https://www.ducasergio.it/)
 

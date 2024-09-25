@@ -165,14 +165,20 @@ code[class*="language-java"] {
     }
 }
 
-.language-ts,
+.language-js,
 .language-typescript {
     .code-line {
         @apply text-[var(--prism-color-property-access)];
     }
 
+    .token {
+        .property-access {
+            @apply text-[var(--prism-color-string)];
+        }
+    }
+
     &.script {
-        &.language-javascript {
+        &.language-typescript {
             @apply text-[var(--prism-color-base-primary)];
         }
     }

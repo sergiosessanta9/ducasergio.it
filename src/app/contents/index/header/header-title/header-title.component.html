@@ -2,7 +2,7 @@
      class="mb-1 flex items-center gap-1 text-2xl text-slate-600 md:mb-0 md:gap-2 md:text-4xl dark:text-slate-400">
   hi!
   <div [@emojiAnimation]="emojiState">
-    <img id="hello-emoji" src="./assets/emojis/love-you-gesture.png" alt="Love-you Gesture" class="w-7 md:w-10" height="48" width="48"
+    <img (click)="handleClick()" id="hello-emoji" src="./assets/emojis/love-you-gesture.png" alt="Love-you Gesture" class="w-7 md:w-10" height="48" width="48"
          (load)="onEmojiLoaded()"/>
   </div>
 </div>

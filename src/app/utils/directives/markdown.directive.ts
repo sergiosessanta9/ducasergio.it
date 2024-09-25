@@ -5,7 +5,9 @@ import * as marked from 'marked';
 import * as yaml from 'js-yaml';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-java';
-import * as jschardet from 'jschardet';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-scss';
 import { TTableOfContentsItem } from "../../components/table-of-contents/models/t-table-of-contents-item";
 import { SafeHtmlPipe } from "../pipes/safe-html-pipe";
 import { ApiService } from 'src/services/api-service';
@@ -167,35 +169,39 @@ export class MarkdownDirective implements OnInit {
 
   private renderCode(render: marked.Renderer){
     render.code = (code, language: string) => {
-      // Custom rendering of code blocks
-      //console.log(language);
-      const split = language.split("::");
-      let options;
-      if (split.length > 1) {
-          try {
-              options = JSON.parse(split[1]);
-          } catch (e) {
-              console.error('Failed to parse options', e);
-              options = new MDCodeOptionVO();
-          }
-      } else {
-          options = new MDCodeOptionVO();
-      }
-      language = split[0];
-      let lines = 0;
+        // Split language to get options
+        const split = language.split("::");
+        let options;
+        
+        if (split.length > 1) {
+            try {
+                options = JSON.parse(split[1]);
+            } catch (e) {
+                console.error('Failed to parse options', e);
+                options = new MDCodeOptionVO();
+            }
+        } else {
+            options = new MDCodeOptionVO();
+        }
+        
+        language = split[0];
+        let lines = 0;
 
-      const validLanguage = Prism.languages[language];
-      const highlighted = validLanguage ? Prism.highlight(code, validLanguage, language) : code;
-      const wrappedLines = highlighted.split('\n').map(line =>{ 
-        lines++;
-        return`<span class="code-line">${line}</span>`
-      }).join('\n');
+        // Prism language check and code highlighting
+        const validLanguage = Prism.languages[language];
+        const highlighted = validLanguage ? Prism.highlight(code, validLanguage, language) : code;
+        
+        // Wrap each line inside <span class="code-line">
+        const wrappedLines = highlighted.split('\n').map(line => { 
+            lines++;
+            return `<span class="code-line">${line}</span>`;
+        }).join('\n');
 
-      return `<div class="mdx-code">` 
-                +
-                (options.copy 
-                  ?
-                  `<button type="button" class="mdx-code__copy-button" title="Copy to Clipboard" aria-label="Copy to Clipboard">
+        // Return the final HTML with wrapped lines inside <pre><code>
+        return `<div class="mdx-code">` 
+            +
+            (options.copy 
+                ? `<button type="button" class="mdx-code__copy-button" title="Copy to Clipboard" aria-label="Copy to Clipboard">
                     <div class="mdx-code__copy-button-message">Copied!</div>
                     <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
@@ -203,26 +209,33 @@ export class MarkdownDirective implements OnInit {
                       <path d="M9 12h6"></path><path d="M9 16h6"></path>
                     </svg>
                   </button>`
-                  : "")
-                +
-                `<div class="mdx-code__content">
-                  <pre>
-                    <code class="language-${language} code-highlight">${wrappedLines}</code>
-                  </pre>
-                </div>`
-                +
-                (options.footer 
-                  ?
-                  `<div class="mdx-code__footer">
-                    <div class="mdx-code__footer-item ${options.upper ? 'uppercase' : 'capitalize'}">${language}</div>
+                : "")
+            +
+            `<div class="mdx-code__content">
+              <pre class="${lines == 1 ? 'leading-relaxed' : 'leading-[0.75]'}"><code class="language-${language} code-highlight">${wrappedLines}</code></pre>
+            </div>`
+            +
+            (options.footer 
+                ? `<div class="mdx-code__footer">
+                    <div class="mdx-code__footer-item ${options.upper ? 'uppercase' : 'capitalize'}">${this.getLanguage(language)}</div>
                     <div class="mdx-code__footer-item hidden sm:flex">Lines: ${lines}</div>
                     <div class="mdx-code__footer-item uppercase">UTF-8</div>
                   </div>`
-                  : "")
-                +
-              `</div>`;
-              //<div class="mdx-code__footer-item uppercase">${jschardet.detect(code).encoding}</div>
+                : "")
+            + `</div>`;
     };
+}
+
+
+  private getLanguage(language: string): string{
+    switch (language.toLowerCase()) {
+      case "javascript":
+        return "JavaScript";
+      case "typescript":
+        return "TypeScript";
+      default:
+        return language;
+    }
   }
 
   private parseAndManipulateHtml(html: string): string {

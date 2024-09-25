@@ -14,38 +14,41 @@ const routes: Routes = [
     {
         path: '',
         component: PageIndexComponent,
+        title: "Sergio Duca",
         pathMatch: 'full'
     },
     {
         path: 'projects',
         component: ProjectsComponent,
-        title: "Project",
+        title: "Project - Sergio Duca",
         data: {title: 'Projects'}
     },
     {
         path: 'blog',
         component: BlogComponent,
-        title: "Personal Blog",
+        title: "Personal Blog - Sergio Duca",
         data: {title: 'Personal Blog'}
     },
     {
         path: 'blog/:blog-id',
         component: MarkdownComponent,
-        title: "Personal Blog",
+        title: "Personal Blog - Sergio Duca",
         data: {title: 'Personal Blog'}
     },
     {
         path: 'today-i-learned',
         component: TodayILearnedComponent,
-        title: "Today I Learned",
+        title: "Today I Learned - Sergio Duca",
         data: {title: 'Today I Learned'}
     },
     {
         path: 'credits',
+        title: "Credits - Sergio Duca",
         component: MarkdownComponent
     },
     {
         path: 'request-cv',
+        title: "Request CV - Sergio Duca",
         component: RequestCvComponent
     },
     {
@@ -54,27 +57,33 @@ const routes: Routes = [
             {
                 path: 'skills-and-tools',
                 component: MarkdownComponent,
-                title: "Skills and Tools",
+                title: "Skills and Tools - Sergio Duca",
                 data: {title: 'Skills and Tools'}
             },
             {
                 path: 'experience',
                 component: MarkdownComponent,
-                title: "Experience",
+                title: "Experience - Sergio Duca",
                 data: {title: 'Experience'}
             },
             {
                 path: 'studio',
                 component: MarkdownComponent,
-                title: "Studio",
+                title: "Studio - Sergio Duca",
                 data: {title: 'Studio'}
             },
             {
                 path: 'contact',
                 component: MarkdownComponent,
-                title: "Contact",
+                title: "Contact - Sergio Duca",
                 data: {title: 'Contact'}
             },
+            {
+                path: '**', 
+                component: PageNotFoundComponent,
+                title: "404",
+                data: {title: '404'}
+            }
         ]
     },
     {

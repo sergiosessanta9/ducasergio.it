@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { log } from 'console';
-import { ClipboardService } from 'ngx-clipboard';
 import { BlogArticleVO } from 'src/app/models/blog-article-vo';
 import { ApiService } from 'src/services/api-service';
 import { TodayILearnedVO } from 'src/app/models/today-i-learned-vo';
 import { GlobalService } from 'src/services/global-service';
+import { ClipboardService } from 'src/services/clipboard.service';
 
 @Component({
   selector: 'today-i-learned',
@@ -103,7 +103,7 @@ export class TodayILearnedComponent implements OnInit {
         (parent.querySelectorAll(".mdx-code__copy-button-message")[0]).classList.remove("mdx-code__copy-button-message-copied");
       }
       (parent.querySelectorAll(".mdx-code__copy-button-message")[0]).classList.add("mdx-code__copy-button-message-copied");
-      this.clipboardService.copy(this.extractTextBetweenBackticks(this.b64ToText(this.articles[index].markdown)));
+      this.clipboardService.copyTextToClipboard(this.extractTextBetweenBackticks(this.b64ToText(this.articles[index].markdown)));
       setTimeout(() => {
         (parent.querySelectorAll(".mdx-code__copy-button-message")[0]).classList.remove("mdx-code__copy-button-message-copied");
       }, 1000); 

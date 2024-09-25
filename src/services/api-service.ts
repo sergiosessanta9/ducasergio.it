@@ -6,6 +6,7 @@ import { ErrorVO } from 'src/app/models/error-vo';
 import { BlogVO } from 'src/app/models/blog-vo';
 import { BlogArticleVO } from 'src/app/models/blog-article-vo';
 import { TodayILearnedVO } from 'src/app/models/today-i-learned-vo';
+import { CurrentDate } from 'src/app/models/current-date';
 
 @Injectable({
     providedIn: 'root'
@@ -38,6 +39,10 @@ export class ApiService {
   getTILs(): Observable<TodayILearnedVO[]> {
     return this.http.get<TodayILearnedVO[]>(`/api/tils.php`);
     //return this.http.get<TodayILearnedVO[]>(`/api/tils.php`);
+  }
+
+  getDate(): Observable<CurrentDate> {
+    return this.http.get<CurrentDate>(`/api/timeUtils.php`);
   }
 
 }

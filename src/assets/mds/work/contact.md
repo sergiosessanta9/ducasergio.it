@@ -26,6 +26,6 @@ Wanna see what's poppin' on my online playgrounds? Check out these links:
 | :----------- | :------------------------------------------------------------------------------------------------------------ |
 | LinkedIn     | [https://www.linkedin.com/in/sergio-duca-a9756819a](https://www.linkedin.com/in/sergio-duca-a9756819a::blank) |
 | Twitter      | [https://twitter.com/sergioduca639](https://twitter.com/sergioduca639::blank)                                 |
-| Instagram    | [https://github.com/sergiosessanta9](https://github.com/sergiosessanta9::blank)                               |
+| Instagram    | [https://www.instagram.com/sergiosessanta9](https://www.instagram.com/sergiosessanta9::blank)                               |
 
  I promise, my virtual door is always open. Let's connect and make some digital magic happen! 🚀👾

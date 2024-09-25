@@ -34,6 +34,8 @@ export class PageIndexComponent implements AfterContentInit, OnInit {
 
   protected readonly Icons = Icons;
 
+  showConfetti = false;
+
   constructor(private globalService: GlobalService) {
   }
 

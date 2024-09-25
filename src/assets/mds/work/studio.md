@@ -20,7 +20,7 @@ A list of my devices that I use daily that are useful for my work and help my pr
 | OS         | Windows 11 Home 64-bit     |
 | Proccessor | Intel Core i5-6400 6th Gen |
 | RAM        | 8GB 2400 MHz DDR4          |
-| GPU        | RTX GTX1060 3GB GDDR5      |
+| GPU        | RTX 4060 8GB GDDR5         |
 | Storage    | SSD 256GB SATA3            |
 
 My computer is configured with hardware that is not very modern but provides smooth performance for a variety of tasks. It's equipped to handle graphics-intensive applications and has decent torage for files and programs. Overall, it's a reliable system that helps me get things done efficiently.
@@ -29,7 +29,7 @@ My computer is configured with hardware that is not very modern but provides smo
 
 | Name       | Detail                     |
 | ---------- |----------------------------|
-| OS         | macOS Sonoma               |
+| OS         | macOS Sequoia              |
 | Proccessor | Apple M2                   |
 | RAM        | 8GB                        |
 | Storage    | 500GB                      |
@@ -41,13 +41,13 @@ Even after four years, this laptop is still going strong and impressively fast. 
 
 When I reflect on how much this MacBook has aided me, it's more than just a work tool—it's become a reliable companion that's always there to help me conquer even the most demanding tasks and avigate through daily challenges. Its quickness and responsiveness are truly its standout features, making me feel fortunate for the investment I made.
 
-While in the tech world, four years might seem like an eternity, my MacBook proves that quality and reliability can stand the test of time. Every time I open it up and dive into my work, it serves s a reminder that well-made decisions are truly worth it. I'm grateful to have a laptop that continues to deliver at its ***best***, and I'm excited to see what other challenges it'll tackle longside me.
+While in the tech world, four years might seem like an eternity, my MacBook proves that quality and reliability can stand the test of time. Every time I open it up and dive into my work, it serves s a reminder that well-made decisions are truly worth it. I'm grateful to have a laptop that continues to deliver at its <mark>***best***</mark>, and I'm excited to see what other challenges it'll tackle longside me.
 
 ## [Display](/work/studio#display)
 
-My workstation is perfectly optimized for development activities and revolves around a large 32-inch monitor.<br>
-This setup is a real game changer as it allows me to easily handle coding and live previews on separate screens. 
-Everything is at your fingertips for a ***smoother*** and ***more efficient*** workflow!
+My workstation is perfectly optimized for development activities, centered around a large 32-inch monitor.
+This setup is a game changer, providing ample screen space to handle coding and live previews side by side. 
+Everything is within easy reach, creating a ***smoother*** and ***more efficient*** workflow!
 
 ### [Monitor](/work/studio#monitor)
 

@@ -2,6 +2,9 @@
   <app-nav-bar/>
 </header>
 <quick-access/>
+<div *ngIf="isChristmas">
+  <app-snow-effect [densityPerArea]="20" [speedFactor]="0.4"/>
+</div>
 <div class="{{global.isQuickAccessOpen ? 'overflow-hidden':''}} {{global.isQuickAccessOpen ? 'min-h-[100vh]':''}}">
   <main class="flex-1" (scroll)="onScroll($event)">
     <div>

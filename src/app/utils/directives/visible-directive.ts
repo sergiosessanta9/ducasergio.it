@@ -1,10 +1,10 @@
-import {Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2} from "@angular/core";
+import {Directive, ElementRef, HostListener, Input, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges} from "@angular/core";
 import {TTableOfContentsItem} from "../../components/table-of-contents/models/t-table-of-contents-item";
 
 @Directive({
     selector: '[appIsVisible]'
 })
-export class IsVisibleDirective implements OnInit, OnDestroy {
+export class IsVisibleDirective implements OnInit, OnChanges, OnDestroy {
 
     @Input() watchedElementIds: TTableOfContentsItem[] = [];
 
@@ -20,6 +20,13 @@ export class IsVisibleDirective implements OnInit, OnDestroy {
     @HostListener('window:scroll', [])
     onWindowScroll() {
         this.observeElementsVisibility();
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes['watchedElementIds']) {
+            // Se l'array watchedElementIds cambia, riattiviamo la visibilità
+            this.observeElementsVisibility();
+        }
     }
 
     private observeElementsVisibility() {
